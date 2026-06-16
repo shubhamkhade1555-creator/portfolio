@@ -91,10 +91,22 @@ function start(){
     el.addEventListener('mouseenter',function(){cur.classList.add('grow');});
     el.addEventListener('mouseleave',function(){cur.classList.remove('grow');});});
 
-  /* theme */
-  var tb=document.getElementById('theme');
-  tb.addEventListener('click',function(){var d=document.documentElement,on=d.getAttribute('data-theme')==='dark';
-    d.setAttribute('data-theme',on?'':'dark');tb.textContent=on?'Dark':'Light';});
+  /* theme — system default + persisted choice */
+  var tb=document.getElementById('theme'),root=document.documentElement,
+      mq=window.matchMedia?window.matchMedia('(prefers-color-scheme:dark)'):null,
+      mc=document.querySelector('meta[name="theme-color"]');
+  function syncTheme(){var dark=root.getAttribute('data-theme')==='dark';
+    if(tb)tb.textContent=dark?'Light':'Dark';
+    if(mc)mc.setAttribute('content',dark?'#0C0B0A':'#EFEBE2');}
+  syncTheme();
+  if(tb)tb.addEventListener('click',function(){var on=root.getAttribute('data-theme')==='dark';
+    root.setAttribute('data-theme',on?'':'dark');
+    try{localStorage.setItem('theme',on?'light':'dark');}catch(e){}
+    syncTheme();});
+  /* follow OS switch only while user hasn't set a manual choice */
+  if(mq&&mq.addEventListener)mq.addEventListener('change',function(e){
+    try{if(localStorage.getItem('theme'))return;}catch(_){}
+    root.setAttribute('data-theme',e.matches?'dark':'');syncTheme();});
 
   /* nav scroll-state + sticky FAB + progress */
   var navEl=document.getElementById('nav'),fab=document.getElementById('fab'),heroEl=document.querySelector('.hero'),prog=document.getElementById('progress');
@@ -180,6 +192,13 @@ function start(){
       requestAnimationFrame(draw);}
     draw();window.addEventListener('resize',size);
   });
+
+  /* ---- LIVE IFRAME PREVIEWS — scale logical 1200px frame to fit card ---- */
+  function fitFrames(){document.querySelectorAll('.wframe').forEach(function(f){
+    var w=f.parentElement.clientWidth,lw=parseFloat(f.dataset.w)||1200;
+    if(w)f.style.transform='scale('+(w/lw)+')';});}
+  fitFrames();window.addEventListener('resize',fitFrames);
+  window.addEventListener('load',fitFrames);
 
   /* parallax */
   if(window.gsap&&window.ScrollTrigger){gsap.registerPlugin(ScrollTrigger);
