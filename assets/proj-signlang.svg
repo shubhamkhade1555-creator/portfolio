@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img" aria-label="ML Sign-Language System">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1A1714"/><stop offset="1" stop-color="#0C0B0A"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg2)"/>
+  <g fill="#2A2620"><circle cx="150" cy="160" r="3"/><circle cx="1050" cy="200" r="3"/><circle cx="980" cy="640" r="3"/><circle cx="240" cy="700" r="3"/></g>
+  <!-- hand/gesture recognition mesh -->
+  <g stroke="#6E83FF" stroke-width="2.5" opacity="0.55" fill="none">
+    <path d="M380 230 L520 180 L660 250 L760 200 L840 300 L760 420 L620 460 L480 420 L400 340 Z"/>
+    <path d="M520 180 L620 460"/><path d="M660 250 L480 420"/><path d="M760 200 L400 340"/><path d="M380 230 L840 300"/>
+  </g>
+  <g fill="#E87A52">
+    <circle cx="380" cy="230" r="9"/><circle cx="520" cy="180" r="9"/><circle cx="660" cy="250" r="9"/><circle cx="760" cy="200" r="9"/><circle cx="840" cy="300" r="9"/>
+    <circle cx="760" cy="420" r="9"/><circle cx="620" cy="460" r="9"/><circle cx="480" cy="420" r="9"/><circle cx="400" cy="340" r="9"/>
+  </g>
+  <g fill="#6E83FF"><circle cx="600" cy="320" r="13"/></g>
+  <text x="80" y="800" font-family="Georgia,'Times New Roman',serif" font-size="64" font-style="italic" fill="#F0ECE3">Sign-Language System</text>
+  <text x="82" y="845" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="22" letter-spacing="3" fill="#8E887D">REAL-TIME CNN · TENSORFLOW · OPENCV</text>
+</svg>

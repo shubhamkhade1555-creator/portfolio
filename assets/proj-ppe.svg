@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img" aria-label="PPE Safety Compliance">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1A1714"/><stop offset="1" stop-color="#0C0B0A"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg4)"/>
+  <g fill="#2A2620"><circle cx="160" cy="180" r="3"/><circle cx="1040" cy="220" r="3"/><circle cx="980" cy="650" r="3"/><circle cx="250" cy="700" r="3"/></g>
+  <!-- shield -->
+  <path d="M600 140 L770 210 L770 380 C770 480 690 540 600 580 C510 540 430 480 430 380 L430 210 Z" fill="none" stroke="#6E83FF" stroke-width="6"/>
+  <path d="M600 140 L770 210 L770 380 C770 480 690 540 600 580 C510 540 430 480 430 380 L430 210 Z" fill="#6E83FF" opacity="0.08"/>
+  <!-- check -->
+  <path d="M520 360 L580 425 L700 280" fill="none" stroke="#E87A52" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- detection ticks -->
+  <g stroke="#8E887D" stroke-width="3"><line x1="180" y1="300" x2="230" y2="300"/><line x1="180" y1="420" x2="230" y2="420"/><line x1="970" y1="300" x2="1020" y2="300"/><line x1="970" y1="420" x2="1020" y2="420"/></g>
+  <text x="80" y="800" font-family="Georgia,'Times New Roman',serif" font-size="64" font-style="italic" fill="#F0ECE3">Safety Compliance</text>
+  <text x="82" y="845" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="22" letter-spacing="3" fill="#8E887D">YOLO · OBJECT DETECTION · SHOP-FLOOR</text>
+</svg>

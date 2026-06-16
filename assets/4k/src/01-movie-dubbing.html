@@ -1,0 +1,74 @@
+<!doctype html><html><head><meta charset="utf8"><link rel="stylesheet" href="_base.css"></head>
+<body><div class="stage"><div class="grain"></div>
+<div class="kicker">01 / AUDIO &amp; VIDEO AI &nbsp;·&nbsp; <b>FRAMEX STUDIO</b></div>
+
+<svg width="3840" height="2160" style="position:absolute;inset:0">
+ <defs>
+  <linearGradient id="wav" x1="0" y1="0" x2="1" y2="0">
+   <stop offset="0" stop-color="#E87A52"/><stop offset="1" stop-color="#F0A878"/></linearGradient>
+  <filter id="g"><feGaussianBlur stdDeviation="6"/></filter>
+ </defs>
+ <!-- pipeline rail -->
+ <line x1="430" y1="760" x2="3470" y2="760" stroke="#2A2620" stroke-width="4"/>
+ <g font-family="Consolas,monospace">
+ <!-- STAGE NODES -->
+ <!-- 1 transcription waveform -->
+ <g transform="translate(430,560)">
+   <rect width="640" height="400" rx="22" fill="#16130F" stroke="#332b22" stroke-width="3"/>
+   <text x="40" y="70" fill="#8E887D" font-size="34" letter-spacing="3">01 · TRANSCRIBE</text>
+   <text x="40" y="118" fill="#6E83FF" font-size="40">Whisper large-v3</text>
+   <g stroke="url(#wav)" stroke-width="7" stroke-linecap="round">
+   <line x1="60" y1="280" x2="60" y2="280"/>
+   <path d="M60 280 L100 230 L140 320 L180 200 L220 330 L260 250 L300 300 L340 180 L380 340 L420 230 L460 310 L500 200 L540 290 L580 250"
+     fill="none" stroke="url(#wav)" stroke-width="7"/></g>
+   <text x="40" y="370" fill="#cabfb0" font-size="30">"...welcome to the show..."</text>
+ </g>
+ <!-- 2 diarization -->
+ <g transform="translate(1230,560)">
+   <rect width="640" height="400" rx="22" fill="#16130F" stroke="#332b22" stroke-width="3"/>
+   <text x="40" y="70" fill="#8E887D" font-size="34" letter-spacing="3">02 · DIARIZE</text>
+   <text x="40" y="118" fill="#6E83FF" font-size="40">Pyannote 3.1</text>
+   <g>
+    <rect x="50" y="180" width="200" height="46" rx="8" fill="#E87A52"/><text x="60" y="213" fill="#1A1714" font-size="30">SPK_1</text>
+    <rect x="270" y="180" width="150" height="46" rx="8" fill="#6E83FF"/><text x="285" y="213" fill="#0C0B0A" font-size="30">SPK_2</text>
+    <rect x="50" y="244" width="120" height="46" rx="8" fill="#6E83FF"/>
+    <rect x="190" y="244" width="240" height="46" rx="8" fill="#E87A52"/>
+    <rect x="50" y="308" width="300" height="46" rx="8" fill="#F0A878"/><text x="62" y="341" fill="#1A1714" font-size="30">SPK_3</text>
+   </g>
+ </g>
+ <!-- 3 translate -->
+ <g transform="translate(2030,560)">
+   <rect width="640" height="400" rx="22" fill="#16130F" stroke="#332b22" stroke-width="3"/>
+   <text x="40" y="70" fill="#8E887D" font-size="34" letter-spacing="3">03 · TRANSLATE</text>
+   <text x="40" y="118" fill="#6E83FF" font-size="40">EN → Indian langs</text>
+   <text x="40" y="210" fill="#F0ECE3" font-size="44" font-family="Georgia,serif">शो में आपका</text>
+   <text x="40" y="270" fill="#F0ECE3" font-size="44" font-family="Georgia,serif">स्वागत है</text>
+   <text x="40" y="345" fill="#cabfb0" font-size="30">हिंदी · मराठी · தமிழ் · తెలుగు</text>
+ </g>
+ <!-- 4 clone tts + lipsync -->
+ <g transform="translate(2830,560)">
+   <rect width="640" height="400" rx="22" fill="#16130F" stroke="#332b22" stroke-width="3"/>
+   <text x="40" y="70" fill="#8E887D" font-size="34" letter-spacing="3">04 · CLONE + LIP-SYNC</text>
+   <text x="40" y="118" fill="#6E83FF" font-size="40">F5-TTS / XTTS-v2</text>
+   <!-- face wireframe -->
+   <g transform="translate(320,260)" stroke="#6E83FF" stroke-width="2.5" fill="none">
+     <ellipse cx="0" cy="0" rx="120" ry="150"/>
+     <circle cx="-45" cy="-40" r="14"/><circle cx="45" cy="-40" r="14"/>
+     <path d="M-55 60 Q0 110 55 60"/><path d="M-55 60 Q0 90 55 60"/>
+     <g fill="#E87A52" stroke="none"><circle cx="-55" cy="60" r="6"/><circle cx="55" cy="60" r="6"/><circle cx="0" cy="85" r="6"/><circle cx="-45" cy="-40" r="5"/><circle cx="45" cy="-40" r="5"/></g>
+   </g>
+   <!-- output waveform -->
+   <path d="M40 250 L70 210 L100 290 L130 200 L160 300 L190 230 L220 280"
+     fill="none" stroke="url(#wav)" stroke-width="6"/>
+ </g>
+ <!-- arrows -->
+ <g fill="#E87A52">
+  <path d="M1095 760 l-26 -18 v36 z"/><path d="M1895 760 l-26 -18 v36 z"/><path d="M2695 760 l-26 -18 v36 z"/>
+ </g>
+ </g>
+</svg>
+
+<div class="title">Movie Dubbing<br>Pipeline</div>
+<div class="sub">Multi-speaker</div>
+<div class="tags"><div class="tag">4-STAGE PIPELINE</div><div class="tag">WHISPER LARGE-V3</div><div class="tag">VOICE-CLONE TTS</div><div class="tag">INDIAN LANGUAGES</div></div>
+</div></body></html>

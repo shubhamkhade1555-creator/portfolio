@@ -1,0 +1,79 @@
+<!doctype html><html><head><meta charset="utf8"><link rel="stylesheet" href="_base.css"></head>
+<body><div class="stage"><div class="grain"></div>
+<div class="kicker">02 / DATA SCIENCE &nbsp;·&nbsp; <b>EVTWIN · CAPSTONE</b></div>
+<div class="live">● LIVE</div>
+
+<svg width="3840" height="2160" style="position:absolute;inset:0">
+ <defs>
+  <linearGradient id="cell" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6E83FF"/><stop offset="1" stop-color="#3a47a0"/></linearGradient>
+  <linearGradient id="soc" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#E87A52"/><stop offset="1" stop-color="#F0A878"/></linearGradient>
+ </defs>
+ <!-- battery pack digital twin -->
+ <g transform="translate(430,520)">
+   <rect width="980" height="640" rx="26" fill="#16130F" stroke="#332b22" stroke-width="3"/>
+   <text x="48" y="86" fill="#8E887D" font-size="36" letter-spacing="4" font-family="Consolas">DIGITAL TWIN · BATTERY PACK</text>
+   <g transform="translate(70,150)">
+    <!-- 6x4 cell grid -->
+    <g id="cells"></g>
+   </g>
+   <text x="48" y="600" fill="#6E83FF" font-size="40" font-family="Consolas">96 cells · 7S mirrored model</text>
+ </g>
+ <!-- gauges -->
+ <g transform="translate(1520,520)" font-family="Consolas">
+  <g>
+   <rect width="470" height="300" rx="22" fill="#16130F" stroke="#332b22" stroke-width="3"/>
+   <text x="40" y="78" fill="#8E887D" font-size="34">VOLTAGE</text>
+   <text x="40" y="180" fill="#F0ECE3" font-size="92" font-family="Georgia,serif">402.6<tspan font-size="44" fill="#8E887D"> V</tspan></text>
+   <rect x="40" y="230" width="390" height="14" rx="7" fill="#241f19"/><rect x="40" y="230" width="300" height="14" rx="7" fill="url(#soc)"/>
+  </g>
+  <g transform="translate(510,0)">
+   <rect width="470" height="300" rx="22" fill="#16130F" stroke="#332b22" stroke-width="3"/>
+   <text x="40" y="78" fill="#8E887D" font-size="34">CURRENT</text>
+   <text x="40" y="180" fill="#F0ECE3" font-size="92" font-family="Georgia,serif">128.4<tspan font-size="44" fill="#8E887D"> A</tspan></text>
+   <rect x="40" y="230" width="390" height="14" rx="7" fill="#241f19"/><rect x="40" y="230" width="250" height="14" rx="7" fill="url(#soc)"/>
+  </g>
+  <g transform="translate(0,340)">
+   <rect width="470" height="300" rx="22" fill="#16130F" stroke="#332b22" stroke-width="3"/>
+   <text x="40" y="78" fill="#8E887D" font-size="34">TEMP</text>
+   <text x="40" y="180" fill="#F0ECE3" font-size="92" font-family="Georgia,serif">37.2<tspan font-size="44" fill="#8E887D"> °C</tspan></text>
+   <rect x="40" y="230" width="390" height="14" rx="7" fill="#241f19"/><rect x="40" y="230" width="180" height="14" rx="7" fill="url(#soc)"/>
+  </g>
+  <g transform="translate(510,340)">
+   <rect width="470" height="300" rx="22" fill="#16130F" stroke="#332b22" stroke-width="3"/>
+   <text x="40" y="78" fill="#8E887D" font-size="34">STATE OF CHARGE</text>
+   <text x="40" y="180" fill="#6E83FF" font-size="92" font-family="Georgia,serif">76<tspan font-size="44" fill="#8E887D"> %</tspan></text>
+   <rect x="40" y="230" width="390" height="14" rx="7" fill="#241f19"/><rect x="40" y="230" width="296" height="14" rx="7" fill="#6E83FF"/>
+  </g>
+ </g>
+ <!-- timeseries with anomaly -->
+ <g transform="translate(430,1230)" font-family="Consolas">
+   <rect width="3070" height="560" rx="26" fill="#16130F" stroke="#332b22" stroke-width="3"/>
+   <text x="48" y="80" fill="#8E887D" font-size="36" letter-spacing="4">TELEMETRY · 5+ SENSOR STREAMS · ANOMALY DETECTION</text>
+   <!-- grid -->
+   <g stroke="#241f19" stroke-width="2">
+    <line x1="48" y1="200" x2="3020" y2="200"/><line x1="48" y1="320" x2="3020" y2="320"/><line x1="48" y1="440" x2="3020" y2="440"/></g>
+   <!-- stream lines -->
+   <polyline fill="none" stroke="#6E83FF" stroke-width="4" points="48,330 250,300 460,340 680,290 900,320 1120,280 1340,330 1560,300 1780,340 2000,300 2220,330 2440,300 2660,340 2880,310 3020,330"/>
+   <polyline fill="none" stroke="#F0A878" stroke-width="4" points="48,400 250,390 460,410 680,380 900,400 1120,390 1340,410 1560,385 1780,405 2000,390 2220,410 2440,388 2660,408 2880,395 3020,405"/>
+   <!-- anomaly spike -->
+   <polyline fill="none" stroke="#E87A52" stroke-width="5" points="48,270 400,260 800,265 1200,258 1600,262 1850,255 1950,150 2010,470 2080,250 2400,258 2800,262 3020,258"/>
+   <g transform="translate(1840,120)">
+     <rect width="320" height="80" rx="10" fill="none" stroke="#E87A52" stroke-width="3" stroke-dasharray="12 8"/>
+     <text x="26" y="52" fill="#E87A52" font-size="38">⚠ ANOMALY</text>
+   </g>
+ </g>
+</svg>
+
+<div class="title" style="bottom:330px">Real-Time EV<br>Digital Twin</div>
+<div class="sub" style="bottom:210px">Predictive analytics</div>
+<div class="tags" style="bottom:120px"><div class="tag">5+ DATA STREAMS</div><div class="tag">TIME-SERIES</div><div class="tag">ANOMALY DETECTION</div><div class="tag">BMS</div></div>
+
+<script>
+const g=document.getElementById('cells');let h='';
+for(let r=0;r<4;r++)for(let c=0;c<10;c++){const x=c*88,y=r*108;
+ const lvl=[0.9,0.7,0.85,0.6][r];
+ h+=`<rect x="${x}" y="${y}" width="70" height="90" rx="8" fill="#221d17" stroke="#332b22" stroke-width="2"/>`;
+ h+=`<rect x="${x+8}" y="${y+8+ (74-74*lvl)}" width="54" height="${74*lvl}" rx="4" fill="url(#cell)"/>`;}
+g.innerHTML=h;
+</script>
+</div></body></html>

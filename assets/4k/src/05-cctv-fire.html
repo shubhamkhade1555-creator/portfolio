@@ -1,0 +1,75 @@
+<!doctype html><html><head><meta charset="utf8"><link rel="stylesheet" href="_base.css"></head>
+<body><div class="stage"><div class="grain"></div>
+<div class="kicker">05 / COMPUTER VISION &nbsp;·&nbsp; <b>FIREVISION AI</b></div>
+
+<svg width="3840" height="2160" style="position:absolute;inset:0" font-family="Consolas">
+ <defs>
+  <radialGradient id="heat" cx="0.5" cy="0.62" r="0.6"><stop offset="0" stop-color="#E87A52" stop-opacity=".9"/><stop offset="0.6" stop-color="#D8623A" stop-opacity=".35"/><stop offset="1" stop-color="#D8623A" stop-opacity="0"/></radialGradient>
+  <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#15120f"/><stop offset="1" stop-color="#0c0a09"/></linearGradient>
+ </defs>
+
+ <!-- CCTV monitor frame -->
+ <g transform="translate(430,440)">
+   <rect width="2360" height="1330" rx="20" fill="#0d0b09" stroke="#332b22" stroke-width="4"/>
+   <!-- HUD top -->
+   <text x="40" y="74" fill="#8E887D" font-size="38" letter-spacing="3">CAM_04 · WAREHOUSE_B · EXISTING CCTV FEED</text>
+   <circle cx="2210" cy="58" r="16" fill="#E87A52"/><text x="2090" y="72" fill="#E87A52" font-size="38">REC</text>
+   <text x="40" y="1280" fill="#6E883a" fill-opacity=".0"/>
+   <text x="40" y="1290" fill="#8E887D" font-size="34">2026-06-16  03:14:09</text>
+   <!-- scene: room interior -->
+   <g transform="translate(20,120)">
+     <rect width="2320" height="1090" fill="url(#floor)"/>
+     <!-- perspective floor lines -->
+     <g stroke="#241f19" stroke-width="2">
+       <line x1="0" y1="760" x2="2320" y2="760"/>
+       <line x1="700" y1="1090" x2="980" y2="760"/><line x1="1600" y1="1090" x2="1340" y2="760"/>
+       <line x1="200" y1="1090" x2="700" y2="760"/><line x1="2120" y1="1090" x2="1620" y2="760"/>
+     </g>
+     <!-- shelves -->
+     <g fill="#1c1814" stroke="#2A2620" stroke-width="2">
+       <rect x="120" y="430" width="240" height="330"/><rect x="120" y="430" width="240" height="20"/><rect x="120" y="560" width="240" height="20"/>
+       <rect x="1960" y="430" width="240" height="330"/><rect x="1960" y="430" width="240" height="20"/><rect x="1960" y="560" width="240" height="20"/>
+     </g>
+     <!-- fire + smoke -->
+     <ellipse cx="1180" cy="620" rx="430" ry="330" fill="url(#heat)"/>
+     <path d="M1180 320 C1280 480 1380 560 1340 720 C1320 800 1240 870 1180 870 C1120 870 1040 800 1020 720 C995 600 1100 560 1180 320 Z" fill="#E87A52"/>
+     <path d="M1180 470 C1230 570 1260 620 1240 710 C1228 760 1205 800 1180 800 C1155 800 1132 760 1120 710 C1108 640 1150 600 1180 470 Z" fill="#1A1714"/>
+     <!-- smoke -->
+     <g fill="#3a342c" opacity=".55"><circle cx="1180" cy="240" r="80"/><circle cx="1100" cy="180" r="60"/><circle cx="1260" cy="200" r="66"/><circle cx="1180" cy="120" r="54"/></g>
+     <!-- detection boxes -->
+     <rect x="980" y="300" width="400" height="600" fill="none" stroke="#E87A52" stroke-width="5"/>
+     <rect x="980" y="252" width="230" height="48" fill="#E87A52"/><text x="996" y="290" fill="#1A1714" font-size="34" font-weight="700">FIRE 0.98</text>
+     <rect x="1010" y="80" width="360" height="230" fill="none" stroke="#6E83FF" stroke-width="4" stroke-dasharray="16 10"/>
+     <rect x="1010" y="34" width="270" height="46" fill="#6E83FF"/><text x="1026" y="70" fill="#0C0B0A" font-size="32" font-weight="700">SMOKE 0.91</text>
+   </g>
+ </g>
+
+ <!-- alert panel -->
+ <g transform="translate(2900,440)" font-family="Consolas">
+   <rect width="510" height="1330" rx="20" fill="#16130F" stroke="#332b22" stroke-width="3"/>
+   <text x="40" y="80" fill="#8E887D" font-size="34" letter-spacing="4">RESPONSE</text>
+   <g transform="translate(40,140)">
+     <rect width="430" height="120" rx="14" fill="#2a1610" stroke="#E87A52" stroke-width="3"/>
+     <text x="30" y="76" fill="#E87A52" font-size="48">🔥 IGNITION</text>
+   </g>
+   <g transform="translate(40,300)" fill="#cabfb0" font-size="38">
+     <text y="40">✓ detected &lt; 2s</text>
+     <text y="120">✓ SMS + siren sent</text>
+     <text y="200">✓ zone CAM_04 locked</text>
+     <text y="280">✓ no new hardware</text>
+   </g>
+   <g transform="translate(40,760)">
+     <rect width="430" height="500" rx="14" fill="#0f0d0b" stroke="#241f19" stroke-width="2"/>
+     <text x="28" y="70" fill="#8E887D" font-size="32">CONFIDENCE</text>
+     <text x="28" y="200" fill="#E87A52" font-size="120" font-family="Georgia,serif">0.98</text>
+     <rect x="28" y="250" width="374" height="18" rx="9" fill="#241f19"/><rect x="28" y="250" width="366" height="18" rx="9" fill="#E87A52"/>
+     <text x="28" y="360" fill="#8E887D" font-size="32">MODEL</text>
+     <text x="28" y="420" fill="#6E83FF" font-size="44">CNN · OpenCV</text>
+   </g>
+ </g>
+</svg>
+
+<div class="title" style="bottom:300px">CCTV Fire<br>Intelligence</div>
+<div class="sub" style="bottom:180px">Zero new hardware</div>
+<div class="tags"><div class="tag">EXISTING CCTV</div><div class="tag">REAL-TIME</div><div class="tag">EARLY IGNITION</div><div class="tag">AUTO-ALERT</div></div>
+</div></body></html>

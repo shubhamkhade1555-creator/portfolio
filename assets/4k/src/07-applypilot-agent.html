@@ -1,0 +1,72 @@
+<!doctype html><html><head><meta charset="utf8"><link rel="stylesheet" href="_base.css"></head>
+<body><div class="stage"><div class="grain"></div>
+<div class="kicker">07 / GENAI · AGENT &nbsp;·&nbsp; <b>APPLYPILOT AI</b></div>
+
+<svg width="3840" height="2160" style="position:absolute;inset:0" font-family="Consolas">
+ <defs><linearGradient id="score" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#E87A52"/><stop offset="1" stop-color="#5fd08a"/></linearGradient></defs>
+
+ <!-- agent workflow graph -->
+ <!-- node 1 : JD -->
+ <g transform="translate(380,560)">
+   <rect width="540" height="420" rx="22" fill="#16130F" stroke="#332b22" stroke-width="3"/>
+   <text x="40" y="74" fill="#8E887D" font-size="34" letter-spacing="3">JOB DESCRIPTION</text>
+   <text x="40" y="130" fill="#6E83FF" font-size="40">Naukri · LinkedIn</text>
+   <g stroke="#2A2620" stroke-width="3"><line x1="40" y1="190" x2="480" y2="190"/><line x1="40" y1="240" x2="480" y2="240"/><line x1="40" y1="290" x2="420" y2="290"/><line x1="40" y1="340" x2="470" y2="340"/></g>
+ </g>
+ <!-- node 2 : Gemma 2B local -->
+ <g transform="translate(1080,520)">
+   <rect width="560" height="500" rx="22" fill="#16130F" stroke="#6E83FF" stroke-width="3"/>
+   <text x="40" y="74" fill="#8E887D" font-size="34" letter-spacing="3">LOCAL LLM</text>
+   <text x="40" y="140" fill="#F0ECE3" font-size="64" font-family="Georgia,serif" font-style="italic">Gemma 2B</text>
+   <g transform="translate(40,200)" fill="#cabfb0" font-size="36">
+     <text y="40">parse requirements</text><text y="110">extract skills</text><text y="180">match to profile</text>
+   </g>
+   <g transform="translate(420,360)"><rect width="100" height="46" rx="8" fill="#241f19" stroke="#6E83FF" stroke-width="2"/><text x="14" y="34" fill="#6E83FF" font-size="28">LOCAL</text></g>
+ </g>
+ <!-- node 3 : relevance score -->
+ <g transform="translate(1800,560)">
+   <rect width="540" height="420" rx="22" fill="#16130F" stroke="#332b22" stroke-width="3"/>
+   <text x="40" y="74" fill="#8E887D" font-size="34" letter-spacing="3">RELEVANCE SCORE</text>
+   <text x="40" y="220" fill="#5fd08a" font-size="150" font-family="Georgia,serif">92</text>
+   <text x="300" y="220" fill="#8E887D" font-size="60" font-family="Georgia,serif">/100</text>
+   <rect x="40" y="280" width="460" height="22" rx="11" fill="#241f19"/><rect x="40" y="280" width="423" height="22" rx="11" fill="url(#score)"/>
+   <text x="40" y="360" fill="#cabfb0" font-size="34">✓ above apply threshold</text>
+ </g>
+ <!-- node 4 : tailor -->
+ <g transform="translate(2500,520)">
+   <rect width="560" height="500" rx="22" fill="#16130F" stroke="#332b22" stroke-width="3"/>
+   <text x="40" y="74" fill="#8E887D" font-size="34" letter-spacing="3">TAILOR RESPONSE</text>
+   <text x="40" y="130" fill="#6E83FF" font-size="40">resume + answers</text>
+   <g stroke="#E87A52" stroke-width="3"><line x1="40" y1="190" x2="470" y2="190"/></g>
+   <g stroke="#2A2620" stroke-width="3"><line x1="40" y1="250" x2="480" y2="250"/><line x1="40" y1="300" x2="430" y2="300"/><line x1="40" y1="350" x2="470" y2="350"/><line x1="40" y1="400" x2="400" y2="400"/></g>
+ </g>
+ <!-- node 5 : auto-apply browser -->
+ <g transform="translate(3180,560)">
+   <rect width="280" height="420" rx="22" fill="#0f0d0b" stroke="#5fd08a" stroke-width="3"/>
+   <text x="36" y="70" fill="#8E887D" font-size="30" letter-spacing="2">AUTO-APPLY</text>
+   <rect x="36" y="120" width="208" height="90" rx="12" fill="#5fd08a"/>
+   <text x="62" y="178" fill="#0c0a09" font-size="44" font-weight="700">APPLY</text>
+   <!-- cursor -->
+   <g transform="translate(190,210)" fill="#F0ECE3" stroke="#1a1714" stroke-width="2"><path d="M0 0 L0 46 L12 34 L22 56 L32 50 L22 30 L40 30 Z"/></g>
+   <text x="36" y="320" fill="#5fd08a" font-size="40">✓ submitted</text>
+   <text x="36" y="380" fill="#8E887D" font-size="32">end-to-end</text>
+ </g>
+
+ <!-- connecting arrows -->
+ <g stroke="#E87A52" stroke-width="5" fill="#E87A52">
+  <line x1="920" y1="730" x2="1075" y2="730"/><path d="M1080 730 l-28 -17 v34 z"/>
+  <line x1="1640" y1="730" x2="1795" y2="730"/><path d="M1800 730 l-28 -17 v34 z"/>
+  <line x1="2340" y1="730" x2="2495" y2="730"/><path d="M2500 730 l-28 -17 v34 z"/>
+  <line x1="3060" y1="730" x2="3175" y2="730"/><path d="M3180 730 l-28 -17 v34 z"/>
+ </g>
+ <!-- loop back arrow (autonomous) -->
+ <g stroke="#6E83FF" stroke-width="4" fill="none" stroke-dasharray="14 10">
+   <path d="M3320 990 q0 260 -1500 260 q-1280 0 -1170 -250"/>
+ </g>
+ <text x="1700" y="1300" fill="#6E83FF" font-size="38" text-anchor="middle">autonomous loop · next job</text>
+</svg>
+
+<div class="title" style="bottom:300px">ApplyPilot<br>AI Agent</div>
+<div class="sub" style="bottom:180px">Local LLM agent</div>
+<div class="tags"><div class="tag">GEMMA 2B</div><div class="tag">JD MATCHING</div><div class="tag">AUTO-APPLY</div><div class="tag">END-TO-END</div></div>
+</div></body></html>

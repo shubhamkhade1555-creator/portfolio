@@ -1,0 +1,83 @@
+<!doctype html><html><head><meta charset="utf8"><link rel="stylesheet" href="_base.css"></head>
+<body><div class="stage"><div class="grain"></div>
+<div class="kicker">03 / RESEARCH &nbsp;·&nbsp; <b>FIRST AUTHOR · GRENZE 2025</b></div>
+
+<svg width="3840" height="2160" style="position:absolute;inset:0" font-family="Consolas">
+ <defs><radialGradient id="palm" cx="0.5" cy="0.5" r="0.6"><stop offset="0" stop-color="#6E83FF" stop-opacity=".25"/><stop offset="1" stop-color="#6E83FF" stop-opacity="0"/></radialGradient></defs>
+
+ <!-- camera capture frame with hand + landmarks -->
+ <g transform="translate(430,470)">
+   <rect width="1180" height="1180" rx="26" fill="#0f0d0b" stroke="#332b22" stroke-width="3"/>
+   <text x="40" y="74" fill="#8E887D" font-size="34" letter-spacing="4">OpenCV · VIDEO FRAME</text>
+   <circle cx="1090" cy="58" r="14" fill="#E87A52"/><text x="980" y="70" fill="#E87A52" font-size="34">REC</text>
+   <ellipse cx="590" cy="640" rx="360" ry="360" fill="url(#palm)"/>
+   <!-- hand: palm + 5 fingers as landmark skeleton -->
+   <g stroke="#6E83FF" stroke-width="5" fill="none" transform="translate(590,720)">
+     <!-- wrist -->
+     <circle cx="0" cy="240" r="0"/>
+     <!-- finger chains -->
+     <path d="M0 240 L-150 60 L-180 -120 L-190 -260"/>
+     <path d="M0 240 L-60 40 L-70 -180 L-72 -360"/>
+     <path d="M0 240 L20 30 L26 -200 L30 -400"/>
+     <path d="M0 240 L100 50 L130 -150 L150 -330"/>
+     <path d="M0 240 L160 150 L250 60 L320 0"/>
+     <path d="M-150 60 L-60 40 L20 30 L100 50 L160 150" stroke-width="4"/>
+   </g>
+   <g fill="#E87A52">
+    <!-- joint nodes -->
+    <circle cx="590" cy="960" r="10"/>
+    <circle cx="440" cy="780" r="9"/><circle cx="410" cy="600" r="9"/><circle cx="400" cy="460" r="9"/>
+    <circle cx="530" cy="760" r="9"/><circle cx="520" cy="540" r="9"/><circle cx="518" cy="360" r="9"/>
+    <circle cx="610" cy="750" r="9"/><circle cx="616" cy="520" r="9"/><circle cx="620" cy="320" r="9"/>
+    <circle cx="690" cy="770" r="9"/><circle cx="720" cy="570" r="9"/><circle cx="740" cy="390" r="9"/>
+    <circle cx="750" cy="870" r="9"/><circle cx="840" cy="780" r="9"/><circle cx="910" cy="720" r="9"/>
+   </g>
+   <rect x="300" y="380" width="600" height="640" fill="none" stroke="#6E83FF" stroke-width="3" stroke-dasharray="16 12"/>
+   <text x="306" y="368" fill="#6E83FF" font-size="34">HAND · 0.97</text>
+ </g>
+
+ <!-- CNN -> text output -->
+ <g transform="translate(1760,560)" font-family="Consolas">
+   <rect width="780" height="280" rx="22" fill="#16130F" stroke="#332b22" stroke-width="3"/>
+   <text x="44" y="80" fill="#8E887D" font-size="34" letter-spacing="3">CNN CLASSIFIER · TensorFlow</text>
+   <!-- small conv stack -->
+   <g transform="translate(44,120)">
+    <rect width="90" height="120" rx="6" fill="#241f19" stroke="#6E83FF" stroke-width="2"/>
+    <rect x="120" width="70" height="100" y="10" rx="6" fill="#241f19" stroke="#6E83FF" stroke-width="2"/>
+    <rect x="220" width="50" height="80" y="20" rx="6" fill="#241f19" stroke="#6E83FF" stroke-width="2"/>
+    <g stroke="#332b22"><circle cx="340" cy="20" r="8" fill="#6E83FF"/><circle cx="340" cy="60" r="8" fill="#E87A52"/><circle cx="340" cy="100" r="8" fill="#6E83FF"/></g>
+    <text x="420" y="70" fill="#cabfb0" font-size="40">→ softmax</text>
+   </g>
+ </g>
+ <g transform="translate(1760,900)">
+   <rect width="780" height="220" rx="22" fill="#16130F" stroke="#E87A52" stroke-width="3"/>
+   <text x="44" y="80" fill="#8E887D" font-size="34" letter-spacing="3">RECOGNIZED TEXT</text>
+   <text x="44" y="172" fill="#F0ECE3" font-size="96" font-family="Georgia,serif" font-style="italic">"HELLO"</text>
+ </g>
+
+ <!-- two-way haptic feedback band -->
+ <g transform="translate(2700,560)" font-family="Consolas">
+   <rect width="700" height="560" rx="22" fill="#16130F" stroke="#332b22" stroke-width="3"/>
+   <text x="44" y="80" fill="#8E887D" font-size="34" letter-spacing="3">HAPTIC FEEDBACK · DEAF↔HEARING</text>
+   <!-- wristband -->
+   <g transform="translate(350,300)">
+     <ellipse cx="0" cy="0" rx="150" ry="180" fill="none" stroke="#cabfb0" stroke-width="20"/>
+     <rect x="-70" y="-70" width="140" height="140" rx="20" fill="#241f19" stroke="#6E83FF" stroke-width="4"/>
+     <g stroke="#E87A52" stroke-width="6" fill="none" opacity=".9">
+       <path d="M120 0 q60 -60 0 -120 M150 30 q110 -90 0 -210"/>
+       <path d="M-120 0 q-60 -60 0 -120 M-150 30 q-110 -90 0 -210"/>
+     </g>
+     <text x="-44" y="14" fill="#6E83FF" font-size="44" font-family="Consolas">≋</text>
+   </g>
+ </g>
+ <!-- two-way arrow -->
+ <g stroke="#E87A52" stroke-width="5" fill="#E87A52">
+   <line x1="1640" y1="1050" x2="1740" y2="1050"/><path d="M1745 1050 l-26 -16 v32 z"/>
+   <line x1="2560" y1="700" x2="2680" y2="700"/><path d="M2685 700 l-26 -16 v32 z"/>
+ </g>
+</svg>
+
+<div class="title" style="bottom:300px">ML Sign-Language<br>System</div>
+<div class="sub" style="bottom:180px">Two-way</div>
+<div class="tags"><div class="tag">REAL-TIME CNN</div><div class="tag">OPENCV + TENSORFLOW</div><div class="tag">HAPTIC FEEDBACK</div><div class="tag">1ST-AUTHOR PAPER</div></div>
+</div></body></html>

@@ -1,0 +1,72 @@
+<!doctype html><html><head><meta charset="utf8"><link rel="stylesheet" href="_base.css"></head>
+<body><div class="stage"><div class="grain"></div>
+<div class="kicker">06 / COMPUTER VISION &nbsp;·&nbsp; <b>PPEGUARD VISION</b></div>
+
+<svg width="3840" height="2160" style="position:absolute;inset:0" font-family="Consolas">
+ <defs><linearGradient id="floor2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#15120f"/><stop offset="1" stop-color="#0c0a09"/></linearGradient></defs>
+
+ <!-- shop-floor CCTV frame -->
+ <g transform="translate(430,440)">
+   <rect width="2360" height="1330" rx="20" fill="#0d0b09" stroke="#332b22" stroke-width="4"/>
+   <text x="40" y="74" fill="#8E887D" font-size="38" letter-spacing="3">CAM_02 · SHOP-FLOOR · PPE COMPLIANCE</text>
+   <circle cx="2210" cy="58" r="16" fill="#E87A52"/><text x="2090" y="72" fill="#E87A52" font-size="38">REC</text>
+   <text x="40" y="1290" fill="#8E887D" font-size="34">FRAME 24,118 · 30 FPS</text>
+
+   <g transform="translate(20,120)">
+     <rect width="2320" height="1090" fill="url(#floor2)"/>
+     <g stroke="#241f19" stroke-width="2"><line x1="0" y1="820" x2="2320" y2="820"/><line x1="0" y1="940" x2="2320" y2="940"/></g>
+
+     <!-- worker A : compliant -->
+     <g transform="translate(560,170)">
+       <!-- legs -->
+       <g fill="#2b2620"><rect x="-50" y="0" width="44" height="560" rx="10"/><rect x="40" y="0" width="44" height="560" rx="10"/></g>
+       <!-- safety shoes -->
+       <g fill="#3a322a" stroke="#1a1714" stroke-width="2"><path d="M-70 560 h70 v60 q0 30 -30 30 h-80 q-20 0 -20 -28 z"/><path d="M30 560 h70 v60 q0 30 -30 30 h-80 q-20 0 -20 -28 z"/></g>
+       <g fill="#E87A52"><rect x="-70" y="560" width="70" height="14"/><rect x="30" y="560" width="70" height="14"/></g>
+       <!-- detect box GREEN -->
+       <rect x="-150" y="540" width="280" height="150" fill="none" stroke="#5fd08a" stroke-width="5"/>
+       <rect x="-150" y="492" width="320" height="48" fill="#5fd08a"/><text x="-134" y="528" fill="#0c0a09" font-size="32" font-weight="700">SAFETY SHOE ✓ 0.96</text>
+     </g>
+
+     <!-- worker B : violation (sneaker) -->
+     <g transform="translate(1500,210)">
+       <g fill="#2b2620"><rect x="-50" y="0" width="42" height="520" rx="10"/><rect x="38" y="0" width="42" height="520" rx="10"/></g>
+       <!-- plain sneaker -->
+       <g fill="#4a4036" stroke="#1a1714" stroke-width="2"><path d="M-68 520 h66 v54 q0 26 -28 26 h-74 q-18 0 -18 -26 z"/><path d="M28 520 h66 v54 q0 26 -28 26 h-74 q-18 0 -18 -26 z"/></g>
+       <!-- detect box RED -->
+       <rect x="-150" y="500" width="270" height="150" fill="none" stroke="#E8523a" stroke-width="5"/>
+       <rect x="-150" y="452" width="300" height="48" fill="#E8523a"/><text x="-134" y="488" fill="#0c0a09" font-size="32" font-weight="700">VIOLATION ✕ 0.93</text>
+     </g>
+   </g>
+ </g>
+
+ <!-- compliance panel -->
+ <g transform="translate(2900,440)" font-family="Consolas">
+   <rect width="510" height="1330" rx="20" fill="#16130F" stroke="#332b22" stroke-width="3"/>
+   <text x="40" y="80" fill="#8E887D" font-size="34" letter-spacing="4">COMPLIANCE</text>
+   <g transform="translate(40,140)">
+     <rect width="430" height="300" rx="14" fill="#0f0d0b" stroke="#241f19" stroke-width="2"/>
+     <text x="28" y="70" fill="#8E887D" font-size="32">SHOE COMPLIANCE</text>
+     <text x="28" y="210" fill="#5fd08a" font-size="130" font-family="Georgia,serif">87%</text>
+     <rect x="28" y="250" width="374" height="18" rx="9" fill="#241f19"/><rect x="28" y="250" width="326" height="18" rx="9" fill="#5fd08a"/>
+   </g>
+   <g transform="translate(40,480)" font-size="40">
+     <rect width="430" height="120" rx="12" fill="#15281b" stroke="#5fd08a" stroke-width="2"/>
+     <text x="28" y="76" fill="#5fd08a">✓ 13 compliant</text>
+   </g>
+   <g transform="translate(40,620)" font-size="40">
+     <rect width="430" height="120" rx="12" fill="#281512" stroke="#E8523a" stroke-width="2"/>
+     <text x="28" y="76" fill="#E8523a">✕ 2 violations</text>
+   </g>
+   <g transform="translate(40,800)" fill="#cabfb0" font-size="36">
+     <text y="50">model · YOLO detector</text>
+     <text y="120">real-time flagging</text>
+     <text y="190">auto-logged to dash</text>
+   </g>
+ </g>
+</svg>
+
+<div class="title" style="bottom:300px">Workplace Safety<br>Compliance</div>
+<div class="sub" style="bottom:180px">Safety-shoe detection</div>
+<div class="tags"><div class="tag">SAFETY-SHOE DETECTION</div><div class="tag">REAL-TIME</div><div class="tag">SHOP-FLOOR</div><div class="tag">VIOLATION FLAGGING</div></div>
+</div></body></html>
