@@ -448,10 +448,16 @@
 .cn-head{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);display:flex;align-items:center;gap:9px}
 .cn-head i{width:7px;height:7px;border-radius:50%;background:var(--clay);box-shadow:0 0 8px var(--clay);animation:cnPulse 1.6s ease-in-out infinite}
 @keyframes cnPulse{50%{opacity:.3}}
-.li-wrap{display:grid;place-items:center;min-height:300px;background:var(--band);border-radius:12px;padding:16px}
-.li-wrap .badge-base__link{font-family:var(--mono);font-size:.8rem;color:var(--accent)}
-.gh-wrap{overflow-x:auto;background:var(--band);border-radius:12px;padding:18px 16px;flex:1;display:flex;align-items:center}
-.gh-wrap img{width:100%;min-width:520px;display:block;filter:saturate(1.05)}
+/* LinkedIn custom card — always renders, no flaky external script */
+.li-card{display:flex;flex-direction:column;gap:9px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:26px 22px;flex:1;justify-content:center;transition:.3s}
+[data-theme="dark"] .li-card{background:#10131c;border-color:rgba(255,255,255,.1)}
+.li-card:hover{border-color:#0A66C2;transform:translateY(-2px)}
+.li-logo{width:42px;height:42px;display:grid;place-items:center;background:#0A66C2;border-radius:9px;color:#fff;font-weight:700;font-size:1.25rem;font-family:var(--sans,inherit)}
+.li-name{font-family:var(--serif);font-size:1.5rem;color:var(--ink);line-height:1.1;margin-top:6px}
+.li-role{color:var(--ink-soft);font-size:.92rem;line-height:1.45}
+.li-loc{font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}
+.gh-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;background:var(--band);border-radius:12px;padding:18px 16px;min-width:0}
+.gh-wrap img{height:auto;min-width:520px;width:100%;display:block;filter:saturate(1.05)}
 .cn-cta{margin-top:auto;font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;padding:11px 18px;border:1px solid var(--line);border-radius:30px;text-align:center;transition:.25s}
 .cn-cta:hover{border-color:var(--accent);color:var(--accent)}
 @media(max-width:820px){.connect-grid{grid-template-columns:1fr}}
@@ -459,15 +465,16 @@
 <section class="connect" id="connect">
   <div class="label reveal">Connect · Live</div>
   <h2 class="big-h reveal">Where I'm <em>active</em></h2>
-  <p class="epigraph reveal">A live LinkedIn profile card and a real, auto-updating contribution graph — pulled live, not screenshots.</p>
+  <p class="epigraph reveal">A direct line to my LinkedIn and a real, auto-updating GitHub contribution graph — not screenshots.</p>
   <div class="connect-grid">
     <div class="cn-card reveal">
-      <div class="cn-head"><i></i>LinkedIn · live profile</div>
-      <div class="li-wrap">
-        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="shubham-khade-ml" data-version="v1">
-          <a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/shubham-khade-ml?trk=profile-badge" target="_blank" rel="noopener">Shubham Khade</a>
-        </div>
-      </div>
+      <div class="cn-head"><i></i>LinkedIn · profile</div>
+      <a class="li-card" href="https://linkedin.com/in/shubham-khade-ml" target="_blank" rel="noopener">
+        <span class="li-logo">in</span>
+        <span class="li-name">Shubham Khade</span>
+        <span class="li-role">AI/ML Engineer — Audio, Vision &amp; Generative AI systems</span>
+        <span class="li-loc">Pune, India · Open to AI/ML roles</span>
+      </a>
       <a class="cn-cta" href="https://linkedin.com/in/shubham-khade-ml" target="_blank" rel="noopener">Follow on LinkedIn ↗</a>
     </div>
     <div class="cn-card reveal">
@@ -479,7 +486,6 @@
     </div>
   </div>
 </section>
-<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
@@ -494,12 +500,16 @@
   <div class="csocials reveal">
     <a href="https://github.com/shubhamkhade1555-creator" target="_blank" rel="noopener">GitHub</a>
     <a href="https://linkedin.com/in/shubham-khade-ml" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://wa.me/919922931551?text=Hi%20Shubham%2C%20I%20saw%20your%20portfolio" target="_blank" rel="noopener">WhatsApp</a>
     <a href="https://drive.google.com/file/d/1CjGn9Y4s4CJtCOk4LphN6cvUqnchFq2p/view" target="_blank" rel="noopener">Publication</a>
   </div>
 </section>
 
 <div class="fab" id="fab">
   <a class="fab-resume" href="assets/Shubham_Khade_Resume.docx" download aria-label="Download resume" title="Download resume">CV</a>
+  <a class="fab-wa" href="https://wa.me/919922931551?text=Hi%20Shubham%2C%20I%20saw%20your%20portfolio" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="WhatsApp">
+    <svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.04 4C9.94 4 5 8.94 5 15.04c0 1.95.51 3.85 1.48 5.53L5 28l7.6-1.45a11.02 11.02 0 0 0 3.44.55h.01c6.1 0 11.04-4.94 11.04-11.04C27.09 8.94 22.14 4 16.04 4Zm0 20.2c-1.08 0-2.14-.18-3.15-.54l-.23-.08-4.51.86.86-4.39-.15-.24a9.16 9.16 0 0 1-1.4-4.83c0-5.07 4.13-9.2 9.2-9.2 5.07 0 9.2 4.13 9.2 9.2 0 5.07-4.13 9.2-9.2 9.2Zm5.05-6.89c-.28-.14-1.64-.81-1.89-.9-.25-.09-.43-.14-.62.14-.18.28-.71.9-.87 1.08-.16.18-.32.2-.6.07-.28-.14-1.17-.43-2.23-1.38-.82-.73-1.38-1.64-1.54-1.92-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.49.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.49-.07-.14-.62-1.5-.85-2.06-.22-.54-.45-.46-.62-.47-.16-.01-.35-.01-.53-.01s-.49.07-.74.35c-.25.28-.97.95-.97 2.31 0 1.36.99 2.68 1.13 2.86.14.18 1.96 2.99 4.74 4.19.66.29 1.18.46 1.58.59.66.21 1.27.18 1.74.11.53-.08 1.64-.67 1.87-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.19-.53-.33Z"/></svg>
+  </a>
   <a class="fab-mail" href="mailto:shubhamkhade1555@gmail.com" aria-label="Email Shubham" title="Email">✉</a>
 </div>
 
