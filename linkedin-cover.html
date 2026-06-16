@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shubham Khade — LinkedIn Cover (1584×396)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --canvas:#EFEBE2; --ink:#13110D; --ink-soft:#615A4F;
+    --accent:#1B3FE0; --clay:#D8623A; --line:#D6CFC1; --band:#13110D; --band-fg:#EFEBE2;
+    --serif:"Fraunces",Georgia,serif; --grotesk:"Space Grotesk",system-ui,sans-serif; --mono:"JetBrains Mono",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#2a2722;color:#fff;font-family:var(--grotesk);
+    min-height:100vh;display:flex;flex-direction:column;align-items:center;gap:22px;padding:34px 16px}
+
+  /* ===== EXPORT TARGET — EXACT LINKEDIN COVER SIZE ===== */
+  .cover{
+    position:relative;width:1584px;height:396px;overflow:hidden;flex:none;
+    background:var(--canvas);color:var(--ink);
+    box-shadow:0 30px 80px rgba(0,0,0,.45);
+  }
+  .cover.dark{--canvas:#0C0B0A;--ink:#F0ECE3;--ink-soft:#8E887D;--accent:#6E83FF;--clay:#E87A52;--line:#262320;
+    background:var(--canvas);color:var(--ink)}
+
+  /* soft spotlight glow (same idea as portfolio .spot) */
+  .glow{position:absolute;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(620px 620px at 80% 18%, rgba(216,98,58,.16), transparent 62%),
+      radial-gradient(720px 720px at 96% 120%, rgba(27,63,224,.13), transparent 60%);}
+  .cover.dark .glow{background:
+      radial-gradient(620px 620px at 80% 18%, rgba(232,122,82,.20), transparent 62%),
+      radial-gradient(720px 720px at 96% 120%, rgba(110,131,255,.18), transparent 60%);}
+
+  /* grain */
+  .grain{position:absolute;inset:0;z-index:6;pointer-events:none;opacity:.05;mix-blend-mode:multiply}
+  .cover.dark .grain{mix-blend-mode:screen;opacity:.06}
+
+  /* hairline frame */
+  .frame{position:absolute;inset:18px;z-index:5;border:1px solid var(--line);pointer-events:none}
+
+  /* ===== CONTENT ===== */
+  .pad{position:absolute;inset:0;z-index:4;padding:46px 72px 44px}
+
+  .row-top{display:flex;justify-content:space-between;align-items:flex-start}
+  .pill{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:12.5px;
+    letter-spacing:.13em;text-transform:uppercase;color:var(--ink);
+    border:1px solid var(--line);border-radius:30px;padding:8px 15px;background:rgba(255,255,255,.35)}
+  .cover.dark .pill{background:rgba(255,255,255,.05);color:var(--ink)}
+  .dot{width:8px;height:8px;border-radius:50%;background:#3FB96B;box-shadow:0 0 0 4px rgba(63,185,107,.18)}
+  .site{font-family:var(--mono);font-size:13px;letter-spacing:.08em;color:var(--ink-soft);text-transform:uppercase}
+  .site b{color:var(--clay);font-weight:500}
+
+  .mid{position:absolute;left:72px;top:121px;right:430px}
+  h1{font-family:var(--serif);font-weight:300;font-size:62px;line-height:.96;letter-spacing:-.025em}
+  h1 em{font-style:italic;color:var(--clay)}
+  .sub{margin-top:16px;font-family:var(--serif);font-style:italic;font-weight:300;
+    font-size:20px;color:var(--ink-soft);max-width:40ch}
+  .sub b{font-style:normal;font-weight:400;color:var(--ink)}
+
+  .tags{position:absolute;left:72px;bottom:46px;display:flex;gap:9px;flex-wrap:wrap;max-width:980px}
+  .chip{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--ink-soft);
+    border:1px solid var(--line);border-radius:7px;padding:6px 11px;background:rgba(255,255,255,.3)}
+  .cover.dark .chip{background:rgba(255,255,255,.04)}
+  .chip b{color:var(--ink);font-weight:500}
+
+  .handles{position:absolute;right:72px;bottom:46px;text-align:right;
+    font-family:var(--mono);font-size:12.5px;letter-spacing:.05em;color:var(--ink-soft);line-height:1.9}
+  .handles span{color:var(--clay)}
+
+  /* right monogram / geometric motif */
+  .mark{position:absolute;right:42px;top:50%;transform:translateY(-50%);z-index:3;
+    font-family:var(--serif);font-weight:300;font-size:230px;line-height:.8;letter-spacing:-.04em;
+    color:transparent;-webkit-text-stroke:1.4px var(--line);user-select:none}
+  .mark em{font-style:italic;-webkit-text-stroke:1.4px var(--clay)}
+  .arc{position:absolute;right:-120px;top:50%;transform:translateY(-50%);z-index:2;
+    width:520px;height:520px;border-radius:50%;border:1px solid var(--line);opacity:.6}
+  .arc.b{width:360px;height:360px;border-color:var(--clay);opacity:.35}
+  .bar{position:absolute;right:0;top:0;bottom:0;width:6px;z-index:3;
+    background:linear-gradient(180deg,var(--clay),var(--accent))}
+
+  /* ===== PHOTO MODE ===== */
+  .photoLayer{position:absolute;right:0;top:0;bottom:0;width:660px;z-index:1;overflow:hidden;display:none}
+  .cover.photo .photoLayer{display:block}
+  .figGlow{position:absolute;inset:0;display:none}
+  .photoBg{position:absolute;inset:0;background-size:cover;background-repeat:no-repeat;background-position:50% 30%}
+  .photoFade{position:absolute;inset:0;
+    background:linear-gradient(90deg,#EFEBE2 1%,rgba(239,235,226,0) 50%),
+               linear-gradient(0deg,rgba(239,235,226,.5) 0%,rgba(239,235,226,0) 24%)}
+  .cover.dark .photoFade{
+    background:linear-gradient(90deg,#0C0B0A 1%,rgba(12,11,10,0) 50%),
+               linear-gradient(0deg,rgba(12,11,10,.55) 0%,rgba(12,11,10,0) 24%)}
+  .cover.photo .mark,.cover.photo .arc{display:none}
+  .cover.photo .mid{right:600px}
+  .cover.photo .tags{max-width:760px}
+  .cover.photo-portrait .photoBg{background-position:50% 14%}
+  .cover.photo-sea .photoBg{background-position:50% 42%}
+
+  /* cutout = transparent PNG floating on the canvas (no fade box) */
+  .cover.photo-cutout .photoLayer{width:720px}
+  .cover.photo-cutout .photoBg{background-size:contain;background-position:right bottom}
+  .cover.photo-cutout .photoFade{display:none}
+  .cover.photo-cutout .figGlow{display:block;
+    background:radial-gradient(440px 360px at 72% 64%,rgba(216,98,58,.20),transparent 70%)}
+  .cover.dark.photo-cutout .figGlow{background:radial-gradient(440px 360px at 72% 64%,rgba(110,131,255,.22),transparent 70%)}
+
+  /* ===== SAFE-ZONE GUIDE (excluded from export) ===== */
+  .safe{position:absolute;inset:0;z-index:20;pointer-events:none;display:none}
+  .safe.on{display:block}
+  .avatar{position:absolute;left:60px;bottom:-30px;width:168px;height:168px;border-radius:50%;
+    border:2px dashed var(--accent);background:rgba(27,63,224,.07)}
+  .avatar::after{content:"avatar";position:absolute;inset:0;display:grid;place-items:center;
+    font-family:var(--mono);font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.1em}
+  .mobcrop{position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:1350px;
+    border-left:2px dotted rgba(216,98,58,.6);border-right:2px dotted rgba(216,98,58,.6)}
+
+  /* ===== TOOLBAR ===== */
+  .bar-ui{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center;
+    font-family:var(--mono);font-size:13px}
+  .bar-ui button{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;cursor:pointer;
+    border:1px solid #4a463f;background:#1c1a17;color:#EFEBE2;border-radius:8px;padding:9px 15px;text-transform:uppercase}
+  .bar-ui button:hover{border-color:#D8623A;color:#fff}
+  .bar-ui .go{background:#1B3FE0;border-color:#1B3FE0}
+  .bar-ui .hint{color:#9a948a;text-transform:none;letter-spacing:0}
+  .meta{font-family:var(--mono);font-size:12px;color:#8a857c}
+</style>
+</head>
+<body>
+
+  <div class="meta">LinkedIn cover · 1584 × 396 px · exports at 2× (3168 × 792)</div>
+
+  <!-- ===================== THE COVER ===================== -->
+  <div class="cover" id="cover">
+    <div class="glow"></div>
+    <div class="photoLayer"><div class="figGlow"></div><div class="photoBg" id="coverImg"></div><div class="photoFade"></div></div>
+    <div class="bar"></div>
+    <div class="arc"></div>
+    <div class="arc b"></div>
+    <div class="mark">S<em>K</em></div>
+
+    <div class="pad">
+      <div class="row-top">
+        <span class="pill"><span class="dot"></span>Open to AI/ML roles · @ Framex Studio</span>
+        <span class="site">shubham<b>khade</b>.dev</span>
+      </div>
+
+      <div class="mid">
+        <h1>AI/ML Engineer<br>building <em>production</em> AI</h1>
+        <div class="sub">Audio AI · Computer Vision · Generative AI. <b>Models are easy — systems are hard. I ship the systems.</b></div>
+      </div>
+
+      <div class="tags">
+        <span class="chip"><b>Whisper</b> large-v3</span>
+        <span class="chip"><b>Pyannote</b> 3.1</span>
+        <span class="chip">F5-TTS</span>
+        <span class="chip">XTTS-v2</span>
+        <span class="chip"><b>PyTorch</b></span>
+        <span class="chip">YOLO</span>
+        <span class="chip">AWS IoT</span>
+        <span class="chip">Docker</span>
+      </div>
+
+      <div class="handles">
+        github.com/<span>shubhamkhade1555-creator</span><br>
+        First-author · <span>GRENZE J. Eng. &amp; Tech. 2025</span>
+      </div>
+    </div>
+
+    <svg class="grain"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>
+    <div class="frame"></div>
+
+    <!-- guide overlay (never exported) -->
+    <div class="safe" id="safe">
+      <div class="avatar"></div>
+      <div class="mobcrop"></div>
+    </div>
+  </div>
+
+  <!-- ===================== TOOLBAR ===================== -->
+  <div class="bar-ui">
+    <button class="go" onclick="dl()">⬇ Download PNG (2×)</button>
+    <button onclick="toggleTheme()">Toggle Light / Dark</button>
+    <button onclick="cyclePhoto()">Photo: <span id="photoLbl">None</span></button>
+    <button onclick="toggleSafe()">Safe-zone guide</button>
+    <span class="hint">Tip: enable the guide to check the avatar circle &amp; mobile crop, then turn it off before exporting.</span>
+  </div>
+
+<script src="cover-photos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script>
+  const cover=document.getElementById('cover'), safe=document.getElementById('safe');
+  function toggleTheme(){cover.classList.toggle('dark')}
+  function toggleSafe(){safe.classList.toggle('on')}
+
+  let photo='none';
+  const PLABEL={cutout:'Cutout',portrait:'Portrait',sea:'Sea (hero)'};
+  function cyclePhoto(){
+    const next={none:'cutout',cutout:'portrait',portrait:'sea',sea:'none'};
+    photo=next[photo];
+    cover.classList.remove('photo','photo-cutout','photo-portrait','photo-sea');
+    const bg=document.getElementById('coverImg'), lbl=document.getElementById('photoLbl');
+    const P=window.COVER_PHOTOS||{};
+    if(photo==='none'){bg.style.backgroundImage='';lbl.textContent='None';return;}
+    cover.classList.add('photo','photo-'+photo);
+    bg.style.backgroundImage='url('+(P[photo]||'')+')';
+    lbl.textContent=PLABEL[photo];
+  }
+  // default: show the cropped portrait on load
+  cyclePhoto();
+  async function dl(){
+    safe.classList.remove('on');
+    if(document.fonts&&document.fonts.ready){try{await document.fonts.ready}catch(e){}}
+    if(typeof html2canvas!=='function'){
+      alert('html2canvas not loaded (no internet?). Fallback: open this file in Chrome → DevTools (F12) → Ctrl+Shift+P → "Capture node screenshot" on the .cover element.');
+      return;
+    }
+    const c=await html2canvas(cover,{scale:2,backgroundColor:null,width:1584,height:396,windowWidth:1584,windowHeight:396,useCORS:true});
+    const a=document.createElement('a');
+    a.download='linkedin-cover-shubham'+(cover.classList.contains('dark')?'-dark':'')+(photo!=='none'?'-'+photo:'')+'.png';
+    a.href=c.toDataURL('image/png');a.click();
+  }
+</script>
+</body>
+</html>

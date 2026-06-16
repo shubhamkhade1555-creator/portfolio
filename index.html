@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>document.documentElement.classList.add('js')</script>
+<title>Shubham Khade — AI/ML Engineer · Audio, Vision &amp; GenAI Systems</title>
+<meta name="description" content="AI/ML Engineer building production-scale Audio, Vision and Generative AI systems — ASR, diarization, voice cloning, real-time CV and firmware-to-cloud telemetry." />
+<meta name="author" content="Shubham Anil Khade" />
+<meta name="keywords" content="AI Engineer, Machine Learning Engineer, Audio AI, Computer Vision, GenAI, LLM, Whisper, Pyannote, IoT, Pune" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#13110D" />
+<link rel="canonical" href="https://shubhamkhade.dev/" />
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Shubham Khade — AI/ML Engineer" />
+<meta property="og:description" content="Building production-scale Audio, Vision and Generative AI systems." />
+<meta property="og:image" content="https://shubhamkhade.dev/assets/hero-bg.jpg" />
+<meta property="og:url" content="https://shubhamkhade.dev/" />
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Shubham Khade — AI/ML Engineer" />
+<meta name="twitter:description" content="Building production-scale Audio, Vision and Generative AI systems." />
+<meta name="twitter:image" content="https://shubhamkhade.dev/assets/hero-bg.jpg" />
+<!-- Schema.org Person -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Shubham Anil Khade","jobTitle":"AI/ML Engineer","email":"mailto:shubhamkhade1555@gmail.com","telephone":"+91-99229-31551","address":{"@type":"PostalAddress","addressLocality":"Pune","addressCountry":"India"},"url":"https://shubhamkhade.dev/","sameAs":["https://github.com/shubhamkhade1555-creator","https://linkedin.com/in/shubham-khade-ml"],"worksFor":{"@type":"Organization","name":"Framex Studio"},"knowsAbout":["Audio AI","Computer Vision","Generative AI","LLMs","IoT","Machine Learning"]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<canvas id="bgp" aria-hidden="true"></canvas>
+<div class="progress" id="progress"></div>
+<div class="spot" id="spot"></div>
+<svg class="grain"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>
+<div class="cursor" id="cursor"></div>
+
+<div id="loader"><div class="lwrap">
+  <canvas id="globe" width="200" height="200" aria-label="Loading"></canvas>
+  <div class="lname">Shubham <em>Khade</em></div>
+  <div class="lbar"><i></i></div>
+</div></div>
+
+<a href="#work" class="skip">Skip to content</a>
+<nav id="nav">
+  <a href="#top" class="brand" aria-label="Home">SK.</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="links" id="navLinks">
+    <a href="#work">Work</a><a href="#skills">Skills</a><a href="#spotlight">Prompt Eng</a><a href="#about">About</a><a href="#experience">Experience</a><a href="#research">Research</a><a href="#connect">Connect</a><a href="#contact">Contact</a>
+    <a href="assets/Shubham_Khade_Resume.docx" class="nav-resume" download>Resume <span aria-hidden="true">↓</span></a>
+    <button class="theme-btn tw" id="theme" aria-label="Toggle dark mode">Dark</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg" id="herobg">
+    <picture>
+      <source media="(max-width:700px)" srcset="assets/hero-bg-mobile.jpg" />
+      <img src="assets/hero-bg.jpg" alt="Shubham Khade by the sea" width="2400" height="3600" fetchpriority="high" decoding="async" />
+    </picture>
+  </div>
+  <div class="hero-inner">
+    <span class="status reveal"><span class="dot"></span>Open to AI/ML roles · Audio &amp; Video AI Engineer @ Framex Studio</span>
+    <h1>
+      <span class="lineMask"><span>AI/ML Engineer</span></span>
+      <span class="lineMask"><span>building <em>production</em> AI</span></span>
+    </h1>
+    <div class="htags">
+      <span class="reveal">Production-scale <b>Audio, Vision &amp; Generative AI</b> systems — ASR, voice cloning, real-time CV and firmware-to-cloud telemetry.</span>
+      <span class="reveal sig">“Models are easy. <b>Systems are hard</b> — I ship the systems.”</span>
+    </div>
+    <div class="hero-cta reveal">
+      <a href="#work" class="btn btn-primary">View Projects</a>
+      <a href="assets/Shubham_Khade_Resume.docx" class="btn btn-ghost" download>Download Resume <span aria-hidden="true">↓</span></a>
+    </div>
+    <span class="scrollcue reveal">Scroll to explore</span>
+  </div>
+</section>
+
+<div class="strip"><div class="track">
+  <span>Whisper <b>large-v3</b><span>•</span>Pyannote <b>3.1</b><span>•</span>F5-TTS<span>•</span>XTTS-v2<span>•</span>PyTorch<span>•</span>ESP32<span>•</span>AWS IoT Core<span>•</span></span>
+  <span>Whisper <b>large-v3</b><span>•</span>Pyannote <b>3.1</b><span>•</span>F5-TTS<span>•</span>XTTS-v2<span>•</span>PyTorch<span>•</span>ESP32<span>•</span>AWS IoT Core<span>•</span></span>
+</div></div>
+
+<!-- STATS -->
+<section><div class="stats">
+  <div class="s reveal"><div class="n" data-count="9">0</div><div class="t">Projects shipped</div></div>
+  <div class="s reveal"><div class="n" data-count="1">0</div><div class="t">First-author publication</div></div>
+  <div class="s reveal"><div class="n" data-count="200" data-suffix="ms">0</div><div class="t">End-to-end telemetry latency</div></div>
+  <div class="s reveal"><div class="n" data-count="5" data-suffix="+">0</div><div class="t">Real-time streams fused</div></div>
+</div></section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="sticky">
+    <div class="label reveal">About</div>
+    <div class="aboutimg reveal"><img src="assets/about-pro.jpg" alt="Shubham Khade — professional portrait" width="1050" height="1400" loading="lazy" decoding="async" /></div>
+  </div>
+  <div class="col">
+    <p class="big reveal">A Computer Science engineer who turns research-grade machine learning into <b>production systems that ship</b> — across Audio AI, computer vision, data analytics and embedded intelligence, <em>end to end.</em></p>
+    <p class="reveal">Currently an Audio &amp; Video AI Engineer at Framex Studio, building an end-to-end movie-dubbing pipeline — transcription → diarization → translation → voice-cloned TTS across Indian languages.</p>
+    <p class="reveal">Built a real-time <b>data-analytics</b> pipeline for an EV digital twin — streaming multi-sensor telemetry into a cloud layer for anomaly detection, fleet-health analytics and predictive maintenance. First-author of a published ML research paper on assistive deaf-communication systems.</p>
+    <div class="edu reveal">
+      <h4>Education</h4>
+      <ul>
+        <li><span class="deg">B.Tech — Computer Science &amp; Engineering <i>(IoT &amp; Cyber Security with Blockchain)</i></span><span class="meta">Annasaheb Dange College of Engineering &amp; Technology, Ashta · 2021–2025 · CGPA 7.1 / 10</span></li>
+        <li><span class="deg">HSC · Class XII — Science</span><span class="meta">Dr. Bapuji Salunkhe College, Sangli · 83%</span></li>
+        <li><span class="deg">SSC · Class X</span><span class="meta">Vidyamandir Prashala, Miraj · 73.6%</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="exp" id="experience">
+  <div class="label reveal">Experience</div>
+  <h2 class="big-h reveal">Where I've <em>worked</em></h2>
+  <div class="exp-list">
+
+    <div class="exp-item reveal">
+      <div class="exp-when">Nov 2025 — Present</div>
+      <div class="exp-body">
+        <h3>Audio &amp; Video AI Engineer</h3>
+        <div class="exp-co">Framex Studio · Movie Dubbing</div>
+        <p>Building an end-to-end movie-dubbing pipeline — ASR, speaker diarization, translation, voice-cloned TTS and lip-sync across Indian languages, for production-ready workflows.</p>
+        <div class="exp-tags"><i>Whisper</i><i>Pyannote</i><i>F5-TTS</i><i>XTTS-v2</i></div>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-when">Feb 2025 — Oct 2025</div>
+      <div class="exp-body">
+        <h3>Graduate Engineer Apprentice — ML &amp; IoT <span class="exp-badge">Internship</span></h3>
+        <div class="exp-co">KatMine Technology Pvt. Ltd.</div>
+        <p>Built a real-time data pipeline ingesting sensor data over RS-485; processed and transformed hardware streams for cloud ingestion and live monitoring; maintained uptime across the firmware–backend–cloud stack.</p>
+        <div class="exp-tags"><i>Python</i><i>RS-485</i><i>Cloud</i><i>Data Pipelines</i></div>
+      </div>
+    </div>
+
+    <!-- ▼ TEMPLATE — copy this whole block to add a new experience ▼
+    <div class="exp-item reveal">
+      <div class="exp-when">START — END</div>
+      <div class="exp-body">
+        <h3>ROLE TITLE <span class="exp-badge">Internship</span></h3>
+        <div class="exp-co">COMPANY · TYPE</div>
+        <p>What you did — impact, scope, tools. Keep it to 1–2 lines.</p>
+        <div class="exp-tags"><i>Tag</i><i>Tag</i></div>
+      </div>
+    </div>
+    ▲ END TEMPLATE ▲ -->
+
+  </div>
+</section>
+
+<!-- ETHOS / MANIFESTO -->
+<section class="ethos">
+  <div class="label reveal">Ethos</div>
+  <p class="ethos-quote reveal">A demo survives the meeting.<br /><em>A system survives production.</em></p>
+  <p class="ethos-by reveal">— Anyone can call a model. The real work is keeping it honest at 3 a.m., under load, on real data. That's the only line of work I'm interested in.</p>
+</section>
+
+<!-- CAPABILITIES -->
+<section class="cap">
+  <div class="label reveal">Capabilities</div>
+  <h2 class="big-h reveal">What I <em>build</em></h2>
+  <p class="epigraph reveal"><b>Research earns the paper.</b> Engineering earns the <em>uptime.</em> I do both.</p>
+  <div class="capgrid">
+    <div class="caprow"><div class="idx">01</div><div class="cname">Audio &amp; Video AI</div><div class="cdesc">End-to-end movie dubbing — ASR, diarization, translation, voice cloning, lip-sync &amp; scene detection. Timbre-preserving, noise-cleaned, long-form across languages.<div class="tags"><i>Whisper</i><i>Pyannote</i><i>F5-TTS</i><i>XTTS-v2</i><i>Lipsync</i><i>PySceneDetect</i></div></div></div>
+    <div class="caprow"><div class="idx">02</div><div class="cname">Computer Vision &amp; ML</div><div class="cdesc">Real-time CNN pipelines — gesture recognition, video-frame inference — deployed with OpenCV + TensorFlow/PyTorch.<div class="tags"><i>PyTorch</i><i>TensorFlow</i><i>OpenCV</i><i>CNNs</i></div></div></div>
+    <div class="caprow"><div class="idx">03</div><div class="cname">IoT &amp; Embedded</div><div class="cdesc">Firmware-to-cloud telemetry, sensor fusion, edge filtering, sub-200ms MQTT pipelines on ESP32 / AWS IoT Core.<div class="tags"><i>ESP32</i><i>MQTT</i><i>RS-485</i><i>AWS IoT</i></div></div></div>
+    <div class="caprow"><div class="idx">04</div><div class="cname">GenAI &amp; LLM Systems</div><div class="cdesc">Building with frontier &amp; open models — agents, inference and AI-assisted full-stack delivery.<div class="tags"><i>Hugging Face</i><i>Replicate</i><i>Ollama</i><i>Llama 4</i><i>Qwen 3</i></div></div></div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills" id="skills">
+  <div class="label reveal">Skills</div>
+  <h2 class="big-h reveal">Technical <em>stack</em></h2>
+  <p class="epigraph reveal">Tools are just vocabulary. <em>Judgment</em> is knowing which word the problem actually needs.</p>
+  <div class="skillgrid reveal">
+    <div class="skillcard"><h4>Languages</h4><div class="chips"><i>Python</i><i>JavaScript</i><i>C</i><i>C++</i><i>SQL</i><i>HTML</i><i>CSS</i></div></div>
+    <div class="skillcard"><h4>ML &amp; Deep Learning</h4><div class="chips"><i>PyTorch</i><i>TensorFlow</i><i>scikit-learn</i><i>NumPy</i><i>Pandas</i><i>CNNs</i><i>Computer Vision</i></div></div>
+    <div class="skillcard"><h4>Audio &amp; Video AI</h4><div class="chips"><i>Whisper</i><i>Pyannote</i><i>F5-TTS</i><i>XTTS-v2</i><i>ElevenLabs</i><i>Lipsync</i><i>PySceneDetect</i></div></div>
+    <div class="skillcard"><h4>GenAI &amp; LLMs</h4><div class="chips"><i>Hugging Face</i><i>Replicate</i><i>Together AI</i><i>Ollama</i><i>GPT-5</i><i>Claude 4</i><i>Gemini 2.5</i><i>Llama 4</i><i>Qwen 3</i><i>DeepSeek</i></div></div>
+    <div class="skillcard"><h4>IoT &amp; Embedded</h4><div class="chips"><i>Arduino</i><i>ESP32</i><i>MQTT</i><i>AWS IoT Core</i><i>RS-485</i><i>Firmware</i></div></div>
+    <div class="skillcard"><h4>Data &amp; Cloud</h4><div class="chips"><i>MySQL</i><i>Firebase</i><i>AWS EC2</i><i>AWS IoT</i></div></div>
+    <div class="skillcard"><h4>Tools &amp; DevOps</h4><div class="chips"><i>Git</i><i>Docker</i><i>Linux</i><i>Postman</i><i>Jupyter</i><i>VS Code</i><i>Cursor</i><i>Claude Code</i></div></div>
+    <div class="skillcard"><h4>Data Science &amp; Analytics</h4><div class="chips"><i>Pandas</i><i>NumPy</i><i>Time-Series</i><i>Anomaly Detection</i><i>EDA</i><i>Data Viz</i></div></div>
+  </div>
+</section>
+
+<!-- SPOTLIGHT — Prompt Engineering -->
+<style>
+.spotlight{padding:clamp(60px,9vh,110px) var(--pad);display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(28px,5vw,64px);align-items:center;max-width:var(--maxw);margin:0 auto}
+.spotlight .sp-copy .label{margin-bottom:14px}
+.spotlight h2{font-family:var(--serif);font-weight:300;font-size:clamp(2rem,4.4vw,3.4rem);line-height:1.02;letter-spacing:-.01em;margin-bottom:16px}
+.spotlight h2 em{font-style:italic;color:var(--clay)}
+.spotlight p{color:var(--ink-soft);max-width:52ch;line-height:1.6;margin-bottom:18px}
+.spotlight p b{color:var(--ink);font-weight:600}
+.spotlight .sp-stats{display:flex;flex-wrap:wrap;gap:22px;margin:0 0 26px;padding-top:18px;border-top:1px solid var(--line)}
+.spotlight .sp-stats b{font-family:var(--serif);font-size:1.7rem;font-weight:400;display:block;line-height:1}
+.spotlight .sp-stats span{font-family:var(--mono);font-size:.64rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-soft)}
+.spotlight .sp-cta{display:flex;gap:12px;flex-wrap:wrap}
+.spotlight .sp-cta a{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;padding:12px 22px;border-radius:30px;border:1px solid var(--line);transition:.25s}
+.spotlight .sp-cta a.solid{background:var(--ink);color:var(--canvas);border-color:var(--ink)}
+.spotlight .sp-cta a.solid:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.spotlight .sp-cta a.line:hover{border-color:var(--accent);color:var(--accent)}
+.spotlight .sp-frame{position:relative;border:1px solid var(--line);border-radius:18px;overflow:hidden;aspect-ratio:16/10;background:#0a0b10;box-shadow:0 26px 60px rgba(0,0,0,.28);cursor:pointer}
+.spotlight .sp-frame iframe{position:absolute;top:0;left:0;width:1440px;height:900px;border:0;transform:scale(.42);transform-origin:top left;pointer-events:none;opacity:0;transition:opacity .8s var(--ease)}
+.spotlight .sp-frame.loaded iframe{opacity:1}
+.spotlight .sp-frame .sp-ph{position:absolute;inset:0;display:grid;place-items:center;gap:10px;color:#cdd6ff;font-family:var(--mono);font-size:.72rem;background:radial-gradient(120% 120% at 80% 0%,rgba(27,63,224,.28),transparent 60%);transition:opacity .5s}
+.spotlight .sp-frame.loaded .sp-ph{opacity:0}
+.spotlight .sp-frame .sp-spin{width:22px;height:22px;border:2px solid rgba(255,255,255,.18);border-top-color:var(--clay);border-radius:50%;animation:spSpin 1s linear infinite}
+@keyframes spSpin{to{transform:rotate(360deg)}}
+.spotlight .sp-frame .sp-live{position:absolute;top:13px;left:13px;z-index:3;font-family:var(--mono);font-size:.6rem;letter-spacing:.06em;padding:5px 11px;border-radius:20px;background:rgba(8,9,13,.6);color:#fff;border:1px solid rgba(255,255,255,.22);display:flex;align-items:center;gap:7px;backdrop-filter:blur(4px)}
+.spotlight .sp-frame .sp-live i{width:6px;height:6px;border-radius:50%;background:var(--clay);box-shadow:0 0 8px var(--clay);animation:spPulse 1.6s ease-in-out infinite}
+@keyframes spPulse{50%{opacity:.3}}
+.spotlight .sp-frame .sp-ov{position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.55));opacity:0;transition:.3s;display:grid;place-items:end center;padding-bottom:14px;color:#fff;font-family:var(--mono);font-size:.78rem;z-index:2}
+.spotlight .sp-frame:hover .sp-ov{opacity:1}
+@media(max-width:880px){.spotlight{grid-template-columns:1fr;gap:30px}.spotlight .sp-frame{order:-1}}
+</style>
+<section class="spotlight" id="spotlight">
+  <div class="sp-copy">
+    <div class="label reveal">Spotlight · Prompt Engineering</div>
+    <h2 class="reveal">Turning an LLM into a <em>design factory</em></h2>
+    <p class="reveal">Anyone can write one prompt. I build the <b>operating layer around the model</b> — operating manuals, a reusable design-DNA vocabulary and agent harnesses that make an LLM emit <b>consistent, production-grade design &amp; code</b> on demand. The proof: <b>USYNC</b>, a self-indexing hub of 150+ AI-generated artifacts, each with a live inline preview.</p>
+    <div class="sp-stats reveal">
+      <div><b>150+</b><span>Artifacts indexed</span></div>
+      <div><b>200</b><span>Design-DNA tokens</span></div>
+      <div><b>8</b><span>Channels · live</span></div>
+    </div>
+    <div class="sp-cta reveal">
+      <a class="solid" href="prompt-engineering.html">Read the case study →</a>
+      <a class="line" href="https://shubhamkhade1555-creator-usync.vercel.app/" target="_blank" rel="noopener">Open USYNC ↗</a>
+    </div>
+  </div>
+  <div class="sp-frame reveal" data-src="https://shubhamkhade1555-creator-usync.vercel.app/" onclick="window.open('prompt-engineering.html','_self')">
+    <span class="sp-live"><i></i>LIVE</span>
+    <div class="sp-ph"><span class="sp-spin"></span>loading usync…</div>
+    <div class="sp-ov">open case study →</div>
+  </div>
+</section>
+<script>
+(function(){var fr=document.querySelector('.spotlight .sp-frame');if(!fr)return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting||fr.dataset.l)return;fr.dataset.l=1;
+    var f=document.createElement('iframe');f.loading='lazy';f.setAttribute('tabindex','-1');f.setAttribute('aria-hidden','true');f.referrerPolicy='no-referrer';
+    f.addEventListener('load',function(){fr.classList.add('loaded')});f.src=fr.dataset.src;fr.appendChild(f);io.unobserve(fr);});},{rootMargin:'400px'});
+  io.observe(fr);})();
+</script>
+
+<!-- WORK -->
+<section class="work" id="work">
+  <div class="whead">
+    <div><div class="label reveal">Selected Work</div><h2 class="big-h reveal" style="margin-bottom:0">Case <em>studies</em></h2><p class="epigraph reveal" style="margin:14px 0 0">Not screenshots. Each one <em>shipped</em>, measured, and still running.</p></div>
+    <span class="reveal" style="font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-soft)">09 shipped projects</span>
+  </div>
+  <div class="hscroll">
+    <div class="wcard reveal">
+      <div class="wvis"><span class="wnum">01 / Audio &amp; Video AI</span><canvas data-vis="wave"></canvas></div>
+      <div class="wmeta">
+        <div class="wtop"><span class="role">Audio &amp; Video AI Engineer</span><span>Framex Studio</span><span>2025—</span></div>
+        <h3>Movie Dubbing Pipeline</h3>
+        <div class="wbig">Multi-speaker</div>
+        <div class="wmetrics"><span>4-stage pipeline</span><span>Whisper large-v3</span><span>Indian languages</span></div>
+        <p>End-to-end production system: transcription → diarization → translation → voice-cloned TTS → lip-sync. Pyannote 3.1 + Whisper large-v3 for segmentation; F5-TTS / XTTS-v2 cloning preserving timbre, with scene detection, noise-removal &amp; spectral enhancement.</p>
+        <div class="stk"><i>Whisper</i><i>Pyannote 3.1</i><i>F5-TTS</i><i>XTTS-v2</i><i>Lipsync</i></div>
+        <a class="wlink" href="#">Read case study →</a>
+      </div>
+    </div>
+    <div class="wcard reveal">
+      <div class="wvis"><span class="wnum">02 / Data Science</span><canvas data-vis="grid"></canvas></div>
+      <div class="wmeta">
+        <div class="wtop"><span class="role">Capstone · Data Analytics</span><span>EVTWIN</span><span>2024—25</span></div>
+        <h3>Real-Time EV Digital Twin &amp; BMS</h3>
+        <div class="wbig">Predictive analytics</div>
+        <div class="wmetrics"><span>5+ data streams</span><span>time-series</span><span>anomaly detection</span></div>
+        <p>Real-time telemetry pipeline ingesting 5+ sensor streams (voltage, current, temperature, RPM, GPS) into a cloud <b>analytics layer</b> — cell-level anomaly detection, driver-behaviour scoring, fleet-health analytics and predictive maintenance over an EV digital twin.</p>
+        <div class="stk"><i>Python</i><i>Pandas</i><i>Time-Series</i><i>Anomaly Detection</i><i>MQTT</i><i>AWS IoT</i></div>
+        <div class="wlinks">
+          <a class="wlink" href="https://temperature-demo.vercel.app/" target="_blank" rel="noopener">Live demo ↗</a>
+          <a class="wlink" href="https://github.com/shubhamkhade1555-creator/Temperature_demo" target="_blank" rel="noopener">Code →</a>
+        </div>
+      </div>
+    </div>
+    <div class="wcard reveal">
+      <div class="wvis"><span class="wnum">03 / Research</span><canvas data-vis="dots"></canvas></div>
+      <div class="wmeta">
+        <div class="wtop"><span class="role">First Author</span><span>Published</span><span>2025</span></div>
+        <h3>ML Sign-Language System for the Deaf</h3>
+        <div class="wbig">Two-way</div>
+        <div class="wmetrics"><span>real-time CNN</span><span>1st-author paper</span><span>GRENZE 2025</span></div>
+        <p>CNN real-time gesture recognition translating sign language to text via video frames (OpenCV + TensorFlow). Novel haptic vibration-feedback channel for deaf ↔ hearing comms. GRENZE Journal, Vol 11 Issue 2, 2025 (id 6348).</p>
+        <div class="stk"><i>Python</i><i>TensorFlow</i><i>OpenCV</i><i>CNN</i></div>
+        <div class="wlinks">
+          <a class="wlink" href="https://github.com/shubhamkhade1555-creator/ml-sign-language-system-for-the-deaf" target="_blank" rel="noopener">Code →</a>
+          <a class="wlink" href="https://drive.google.com/file/d/1C9ztTmxfjfNia0O3K4v1MCjKc2s2N1di/view?usp=sharing" target="_blank" rel="noopener">Watch demo →</a>
+          <a class="wlink" href="https://drive.google.com/file/d/1CjGn9Y4s4CJtCOk4LphN6cvUqnchFq2p/view" target="_blank" rel="noopener">Read the paper →</a>
+        </div>
+      </div>
+    </div>
+    <div class="wcard reveal">
+      <div class="wvis"><span class="wnum">04 / Web</span><canvas data-vis="wave"></canvas></div>
+      <div class="wmeta">
+        <div class="wtop"><span class="role">Freelance · Web</span><span>Jagtap Associates</span><span>2025</span></div>
+        <h3>Finance Office Website</h3>
+        <div class="wbig">Live &amp; deployed</div>
+        <div class="wmetrics"><span>responsive</span><span>AI-assisted</span><span>Vercel</span></div>
+        <p>Designed and shipped a responsive corporate website for a finance &amp; taxation practice — clean service sections, about and contact. Built end-to-end with vanilla HTML/CSS/JS, AI-assisted with Claude, deployed on Vercel.</p>
+        <div class="stk"><i>HTML</i><i>CSS</i><i>JavaScript</i><i>Claude AI</i><i>Vercel</i></div>
+        <a class="wlink" href="https://associatejagtap7.vercel.app/" target="_blank" rel="noopener">Visit site →</a>
+      </div>
+    </div>
+
+    <div class="wcard reveal">
+      <div class="wvis"><span class="wnum">05 / Computer Vision</span><canvas data-vis="dots"></canvas></div>
+      <div class="wmeta">
+        <div class="wtop"><span class="role">CV · Safety</span><span>FireVision AI</span><span>2025</span></div>
+        <h3>CCTV-Based Early Fire Intelligence &amp; Response Platform</h3>
+        <div class="wbig">Zero new hardware</div>
+        <div class="wmetrics"><span>existing CCTV</span><span>real-time</span><span>auto-alert</span></div>
+        <p>Real-time fire &amp; smoke detection running on a company's <b>existing CCTV feeds</b> — no new sensors. A computer-vision model flags ignition early and triggers instant alerts for faster response.</p>
+        <div class="stk"><i>Python</i><i>OpenCV</i><i>CNN</i><i>CCTV</i></div>
+        <div class="wlinks">
+          <a class="wlink" href="https://github.com/shubhamkhade1555-creator/real-time-camera-based-fire-detection" target="_blank" rel="noopener">Code →</a>
+          <a class="wlink" href="https://drive.google.com/file/d/1ssRuRsfbUDSuOrDfV2nlZLC2IP4mDUhe/view?usp=sharing" target="_blank" rel="noopener">Watch demo →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="wcard reveal">
+      <div class="wvis"><span class="wnum">06 / Computer Vision</span><canvas data-vis="grid"></canvas></div>
+      <div class="wmeta">
+        <div class="wtop"><span class="role">CV · PPE</span><span>PPEGuard Vision</span><span>2025</span></div>
+        <h3>Autonomous Workplace Safety Compliance System</h3>
+        <div class="wbig">Safety-shoe detection</div>
+        <div class="wmetrics"><span>safety-shoe detection</span><span>real-time</span><span>shop-floor</span></div>
+        <p>Computer-vision system that detects whether workers are wearing <b>safety shoes</b> on the shop floor — automating PPE-compliance checks and flagging violations in real time.</p>
+        <div class="stk"><i>Python</i><i>YOLO</i><i>OpenCV</i><i>Object Detection</i></div>
+        <a class="wlink" href="#">Read case study →</a>
+      </div>
+    </div>
+
+    <div class="wcard reveal">
+      <div class="wvis"><span class="wnum">07 / GenAI · Agent</span><canvas data-vis="dots"></canvas></div>
+      <div class="wmeta">
+        <div class="wtop"><span class="role">GenAI · Automation</span><span>ApplyPilot AI</span><span>2025</span></div>
+        <h3>Autonomous Career Application Agent Powered by Local LLMs</h3>
+        <div class="wbig">Local LLM agent</div>
+        <div class="wmetrics"><span>Gemma 2B</span><span>auto-apply</span><span>JD matching</span></div>
+        <p>An automation agent that auto-applies to jobs on <b>Naukri &amp; LinkedIn</b> — runs <b>Gemma 2B</b> locally to parse job descriptions, score relevance and tailor responses, then drives the application flow end to end.</p>
+        <div class="stk"><i>Gemma 2B</i><i>Python</i><i>LLM</i><i>Automation</i><i>Selenium</i></div>
+        <a class="wlink" href="#">Read case study →</a>
+      </div>
+    </div>
+
+    <div class="wcard reveal">
+      <div class="wvis"><span class="wnum">08 / GenAI · Prompt Eng</span><canvas data-vis="grid"></canvas></div>
+      <div class="wmeta">
+        <div class="wtop"><span class="role">Prompt Engineering</span><span>USYNC</span><span>2026</span></div>
+        <h3>USYNC — AI Design-System &amp; Artifact Hub</h3>
+        <div class="wbig">150+ artifacts</div>
+        <div class="wmetrics"><span>live inline previews</span><span>200-token design DNA</span><span>8 channels</span></div>
+        <p>Prompt engineering as a system — operating manuals, a reusable design-DNA vocabulary and agent harnesses that make an LLM emit <b>consistent, production-grade design &amp; code</b>. Output: a self-indexing hub of 150+ AI-generated artifacts, each with a live inline preview. Deployed on Vercel.</p>
+        <div class="stk"><i>Prompt Systems</i><i>Design DNA</i><i>Claude</i><i>Vanilla JS</i><i>Vercel</i></div>
+        <div class="wlinks">
+          <a class="wlink" href="prompt-engineering.html">Read case study →</a>
+          <a class="wlink" href="https://shubhamkhade1555-creator-usync.vercel.app/" target="_blank" rel="noopener">Live demo ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="wcard reveal">
+      <div class="wvis"><span class="wnum">09 / Audio AI</span><canvas data-vis="wave"></canvas></div>
+      <div class="wmeta">
+        <div class="wtop"><span class="role">GenAI · Audio</span><span>USYNC Audio</span><span>2026</span></div>
+        <h3>USYNC Audio — AI-Powered Audio Sync</h3>
+        <div class="wbig">Audio sync</div>
+        <div class="wmetrics"><span>browser-based</span><span>open source</span><span>Vercel</span></div>
+        <p>A focused companion to the USYNC hub — a browser-based tool for <b>AI-powered audio synchronization</b>, aligning and processing audio tracks entirely client-side. Built and shipped end-to-end, open-sourced and deployed on Vercel.</p>
+        <div class="stk"><i>JavaScript</i><i>Web Audio</i><i>AI</i><i>Vercel</i></div>
+        <div class="wlinks">
+          <a class="wlink" href="https://usync-audio-nu5r.vercel.app/" target="_blank" rel="noopener">Live demo ↗</a>
+          <a class="wlink" href="https://github.com/shubhamkhade1555-creator/usync-audio" target="_blank" rel="noopener">Code →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ▼ TEMPLATE — copy this .wcard block to add a new project (data-vis: wave | grid | dots) ▼
+    <div class="wcard reveal">
+      <div class="wvis"><span class="wnum">05 / Category</span><canvas data-vis="dots"></canvas></div>
+      <div class="wmeta">
+        <div class="wtop"><span class="role">Role</span><span>Project name</span><span>Year</span></div>
+        <h3>Project Title</h3>
+        <div class="wbig">Headline word</div>
+        <div class="wmetrics"><span>metric</span><span>metric</span><span>metric</span></div>
+        <p>One paragraph — the problem, your approach, the result.</p>
+        <div class="stk"><i>Tool</i><i>Tool</i><i>Tool</i></div>
+        <a class="wlink" href="#">View / Live link →</a>
+      </div>
+    </div>
+    ▲ END TEMPLATE — paste copies above this line ▲ -->
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section class="research" id="research">
+  <div class="label reveal">Credentials</div>
+  <h2 class="big-h reveal">Research &amp; <em>recognition</em></h2>
+  <p class="epigraph reveal"><em>Proof</em>, not promises — peer-reviewed, presented, certified.</p>
+  <div class="rgrid">
+    <div class="rcard reveal"><div class="rtag">Publication</div><h4>Intelligent ML Communication System for the Deaf</h4><p>First-author paper on video + vibration feedback. GRENZE Journal of Engineering &amp; Technology, GIJET Vol 11, Issue 2, 2025 — paper id 6348.</p><a class="rlink" href="https://drive.google.com/file/d/1CjGn9Y4s4CJtCOk4LphN6cvUqnchFq2p/view" target="_blank" rel="noopener">Read paper <span aria-hidden="true">↓</span></a></div>
+    <div class="rcard reveal"><div class="rtag">Competition</div><h4>State-Level IoT Project Competition</h4><p>Presented "IoT-Enabled Two-Wheeler Accident Detection System" representing the institute (2024–25).</p></div>
+    <div class="rcard reveal"><div class="rtag">Certification · AWS</div><h4>AWS Academy Graduate — Getting Started with AWS IoT</h4><p>AWS Training &amp; Certification, plus Introduction to Amazon EC2 (2025–26).</p></div>
+    <div class="rcard reveal"><div class="rtag">Certification · AWS</div><h4>Introduction to Amazon EC2</h4><p>AWS Training &amp; Certification — 2026.</p></div>
+    <div class="rcard reveal"><div class="rtag">Education</div><h4>B.Tech CSE — IoT &amp; Cyber Security with Blockchain</h4><p>Annasaheb Dange College of Engineering &amp; Technology, Ashta · 2021–2025.</p></div>
+
+    <!-- ▼ TEMPLATE — copy a .rcard to add a certification / award / credential ▼
+    <div class="rcard reveal"><div class="rtag">Certification · ISSUER</div><h4>Certificate name</h4><p>Issuer &amp; year — short note.</p></div>
+    ▲ END TEMPLATE ▲ -->
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="label reveal">How I work</div>
+  <h2 class="big-h reveal">Scope to <em>ship</em></h2>
+  <p class="epigraph reveal">No model touched until the <em>real constraint</em> is named. That's where most pipelines quietly die.</p>
+  <div class="pgrid">
+    <div class="pstep reveal"><div class="pn">01 / Scope</div><h5>Frame</h5><p>Define the real constraint — latency, accuracy, hardware budget — before touching a model.</p></div>
+    <div class="pstep reveal"><div class="pn">02 / Build</div><h5>Engineer</h5><p>End-to-end pipelines, edge to cloud. Real data, real failure modes, no toy demos.</p></div>
+    <div class="pstep reveal"><div class="pn">03 / Eval</div><h5>Verify</h5><p>Measure the metric that matters — throughput, WER, timbre fidelity, uptime.</p></div>
+    <div class="pstep reveal"><div class="pn">04 / Ship</div><h5>Deploy</h5><p>Production-ready, monitored, maintained. Cross-functional handoff that holds.</p></div>
+  </div>
+</section>
+
+<!-- CONNECT · LIVE -->
+<style>
+.connect{padding:clamp(60px,9vh,110px) var(--pad);max-width:var(--maxw);margin:0 auto}
+.connect .epigraph{margin:14px 0 38px}
+.connect-grid{display:grid;grid-template-columns:1fr 1.45fr;gap:22px}
+.cn-card{border:1px solid var(--line);border-radius:18px;background:var(--canvas);padding:22px;display:flex;flex-direction:column;gap:16px}
+.cn-head{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);display:flex;align-items:center;gap:9px}
+.cn-head i{width:7px;height:7px;border-radius:50%;background:var(--clay);box-shadow:0 0 8px var(--clay);animation:cnPulse 1.6s ease-in-out infinite}
+@keyframes cnPulse{50%{opacity:.3}}
+.li-wrap{display:grid;place-items:center;min-height:300px;background:var(--band);border-radius:12px;padding:16px}
+.li-wrap .badge-base__link{font-family:var(--mono);font-size:.8rem;color:var(--accent)}
+.gh-wrap{overflow-x:auto;background:var(--band);border-radius:12px;padding:18px 16px;flex:1;display:flex;align-items:center}
+.gh-wrap img{width:100%;min-width:520px;display:block;filter:saturate(1.05)}
+.cn-cta{margin-top:auto;font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;padding:11px 18px;border:1px solid var(--line);border-radius:30px;text-align:center;transition:.25s}
+.cn-cta:hover{border-color:var(--accent);color:var(--accent)}
+@media(max-width:820px){.connect-grid{grid-template-columns:1fr}}
+</style>
+<section class="connect" id="connect">
+  <div class="label reveal">Connect · Live</div>
+  <h2 class="big-h reveal">Where I'm <em>active</em></h2>
+  <p class="epigraph reveal">A live LinkedIn profile card and a real, auto-updating contribution graph — pulled live, not screenshots.</p>
+  <div class="connect-grid">
+    <div class="cn-card reveal">
+      <div class="cn-head"><i></i>LinkedIn · live profile</div>
+      <div class="li-wrap">
+        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="shubham-khade-ml" data-version="v1">
+          <a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/shubham-khade-ml?trk=profile-badge" target="_blank" rel="noopener">Shubham Khade</a>
+        </div>
+      </div>
+      <a class="cn-cta" href="https://linkedin.com/in/shubham-khade-ml" target="_blank" rel="noopener">Follow on LinkedIn ↗</a>
+    </div>
+    <div class="cn-card reveal">
+      <div class="cn-head"><i></i>GitHub · contribution graph</div>
+      <div class="gh-wrap">
+        <img src="https://ghchart.rshah.org/1B3FE0/shubhamkhade1555-creator" alt="Shubham Khade — live GitHub contribution graph" loading="lazy" decoding="async" />
+      </div>
+      <a class="cn-cta" href="https://github.com/shubhamkhade1555-creator" target="_blank" rel="noopener">View GitHub ↗</a>
+    </div>
+  </div>
+</section>
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="label reveal">Contact</div>
+  <div class="contact-portrait reveal"><img src="assets/contact-studio.jpg" alt="Shubham Khade" width="1050" height="1400" loading="lazy" decoding="async" /></div>
+  <h2 class="reveal"><a href="mailto:shubhamkhade1555@gmail.com">Let's <em>build.</em></a></h2>
+  <p class="epigraph reveal" style="margin:-26px auto 44px;max-width:30ch;text-align:center">Bring the hard problem — the kind that <em>doesn't fit</em> in a single API call.</p>
+  <div class="ce reveal">
+    <a href="mailto:shubhamkhade1555@gmail.com">shubhamkhade1555@gmail.com</a>
+    <a href="tel:+919922931551">+91 99229 31551</a>
+  </div>
+  <div class="csocials reveal">
+    <a href="https://github.com/shubhamkhade1555-creator" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://linkedin.com/in/shubham-khade-ml" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://drive.google.com/file/d/1CjGn9Y4s4CJtCOk4LphN6cvUqnchFq2p/view" target="_blank" rel="noopener">Publication</a>
+  </div>
+</section>
+
+<div class="fab" id="fab">
+  <a class="fab-resume" href="assets/Shubham_Khade_Resume.docx" download aria-label="Download resume" title="Download resume">CV</a>
+  <a class="fab-mail" href="mailto:shubhamkhade1555@gmail.com" aria-label="Email Shubham" title="Email">✉</a>
+</div>
+
+<footer>
+  <div>© 2026 Shubham Anil Khade</div>
+  <div class="clock" id="clock">Pune, IST</div>
+  <div>Fraunces · Space Grotesk · JetBrains Mono</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

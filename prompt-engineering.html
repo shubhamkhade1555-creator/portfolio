@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>document.documentElement.classList.add('js')</script>
+<title>Prompt Engineering — Shubham Khade · LLM Design & Code Systems</title>
+<meta name="description" content="Prompt engineering as a system — operating manuals, a reusable design-DNA vocabulary, and USYNC, a hub indexing 150+ AI-generated design artifacts with live inline previews." />
+<meta name="author" content="Shubham Anil Khade" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#13110D" />
+<!-- Open Graph -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Prompt Engineering — Shubham Khade" />
+<meta property="og:description" content="LLM-driven design & code systems — operating manuals, design-DNA vocabulary, and the USYNC artifact hub." />
+<meta property="og:url" content="https://shubhamkhade.dev/prompt-engineering.html" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2313110D'/%3E%3Ctext x='6' y='23' font-family='monospace' font-size='17' fill='%231B3FE0'%3E%E2%9C%A6%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+<style>
+/* ── Prompt-Engineering page-specific ── */
+.pe-wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+.pe-hero{padding:clamp(110px,16vh,180px) 0 clamp(40px,6vh,70px)}
+.pe-kick{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--clay);display:flex;align-items:center;gap:10px}
+.pe-kick::before{content:"";width:30px;height:1px;background:var(--clay)}
+.pe-hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(2.6rem,8vw,6rem);line-height:.98;letter-spacing:-.02em;margin:18px 0 22px}
+.pe-hero h1 em{font-style:italic;color:var(--clay)}
+.pe-lead{font-size:clamp(1.05rem,1.7vw,1.4rem);max-width:62ch;color:var(--ink-soft);line-height:1.55}
+.pe-lead b{color:var(--ink);font-weight:600}
+.pe-metrics{display:flex;flex-wrap:wrap;gap:clamp(22px,4vw,54px);margin-top:42px;border-top:1px solid var(--line);padding-top:30px}
+.pe-metrics .m b{font-family:var(--serif);font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:400;display:block;line-height:1}
+.pe-metrics .m span{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+
+.pe-sec{padding:clamp(48px,8vh,90px) 0;border-top:1px solid var(--line)}
+.pe-label{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:26px}
+.pe-h2{font-family:var(--serif);font-weight:300;font-size:clamp(1.9rem,4vw,3.1rem);line-height:1.05;letter-spacing:-.01em;margin-bottom:14px}
+.pe-h2 em{font-style:italic;color:var(--clay)}
+.pe-sub{color:var(--ink-soft);max-width:60ch;margin-bottom:38px}
+
+/* demos */
+.demos{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:22px}
+.demo{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--band);display:flex;flex-direction:column;transition:transform .4s var(--ease),border-color .4s,box-shadow .4s}
+.demo:hover{transform:translateY(-5px);border-color:var(--accent);box-shadow:0 22px 54px rgba(0,0,0,.32)}
+.frame{position:relative;height:300px;overflow:hidden;cursor:pointer;background:#0a0b10}
+.frame iframe{position:absolute;top:0;left:0;width:1280px;height:900px;border:0;transform:scale(.412);transform-origin:top left;pointer-events:none;opacity:0;transition:opacity .7s var(--ease)}
+.frame.loaded iframe{opacity:1}
+.frame .ph{position:absolute;inset:0;display:grid;place-items:center;gap:10px;color:var(--band-fg);font-family:var(--mono);font-size:.74rem;letter-spacing:.05em;transition:opacity .5s;background:radial-gradient(120% 120% at 80% 0%,rgba(27,63,224,.22),transparent 60%)}
+.frame.loaded .ph{opacity:0}
+.frame .ph .spin{width:22px;height:22px;border:2px solid rgba(255,255,255,.18);border-top-color:var(--clay);border-radius:50%;animation:peSpin 1s linear infinite}
+@keyframes peSpin{to{transform:rotate(360deg)}}
+.frame .ov{position:absolute;inset:0;background:linear-gradient(180deg,transparent 58%,rgba(0,0,0,.62));opacity:0;transition:.3s;display:grid;place-items:end center;padding-bottom:14px;color:#fff;font-family:var(--mono);font-size:.78rem;z-index:2}
+.frame:hover .ov{opacity:1}
+.frame .live{position:absolute;top:12px;left:12px;z-index:3;font-family:var(--mono);font-size:.6rem;letter-spacing:.06em;padding:4px 9px;border-radius:20px;background:rgba(27,63,224,.16);color:#cdd6ff;border:1px solid rgba(110,131,255,.45);display:flex;align-items:center;gap:6px}
+.frame .live i{width:6px;height:6px;border-radius:50%;background:var(--clay);box-shadow:0 0 8px var(--clay);animation:pePulse 1.6s ease-in-out infinite}
+@keyframes pePulse{50%{opacity:.3}}
+.demo-body{padding:18px 20px;display:flex;flex-direction:column;gap:9px;flex:1;background:var(--canvas);color:var(--ink)}
+.demo-body h3{font-family:var(--serif);font-weight:400;font-size:1.35rem}
+.demo-body p{color:var(--ink-soft);font-size:.9rem;line-height:1.55}
+.demo-stk{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+.demo-stk i{font-family:var(--mono);font-style:normal;font-size:.64rem;color:var(--ink-soft);border:1px solid var(--line);padding:3px 8px;border-radius:6px}
+.demo-foot{display:flex;gap:10px;margin-top:auto;padding-top:12px}
+.demo-foot a{flex:1;text-align:center;border-radius:10px;padding:10px;font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;border:1px solid var(--line);transition:.25s}
+.demo-foot a.primary{background:var(--ink);color:var(--canvas);border-color:var(--ink)}
+.demo-foot a.primary:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.demo-foot a.ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+/* approach pillars */
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.pillar{background:var(--canvas);padding:26px 24px}
+.pillar .pn{font-family:var(--mono);font-size:.68rem;color:var(--clay);letter-spacing:.1em}
+.pillar h4{font-family:var(--serif);font-weight:400;font-size:1.3rem;margin:10px 0 8px}
+.pillar p{color:var(--ink-soft);font-size:.88rem;line-height:1.55}
+
+/* prompt cards */
+.prompts{display:grid;gap:18px}
+.prompt{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--band);color:var(--band-fg)}
+.prompt-top{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.08)}
+.prompt-top .tt{font-family:var(--mono);font-size:.82rem;color:var(--band-fg)}
+.prompt-top .tt em{font-style:normal;color:var(--clay)}
+.prompt-top .tech{font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);border:1px solid rgba(255,255,255,.14);padding:3px 9px;border-radius:20px}
+.prompt pre{margin:0;padding:18px;font-family:var(--mono);font-size:.78rem;line-height:1.62;color:#d6d2c8;white-space:pre-wrap;word-break:break-word;max-height:280px;overflow:auto}
+.prompt pre::selection{background:var(--accent);color:#fff}
+.copy{cursor:pointer;background:none;border:1px solid rgba(255,255,255,.18);color:var(--band-fg);font-family:var(--mono);font-size:.66rem;letter-spacing:.05em;padding:5px 11px;border-radius:8px;transition:.25s}
+.copy:hover{border-color:var(--clay);color:var(--clay)}
+.copy.done{border-color:var(--accent);color:#9db0ff}
+
+/* cta back */
+.pe-cta{padding:clamp(54px,9vh,100px) 0;border-top:1px solid var(--line);text-align:center}
+.pe-cta h2{font-family:var(--serif);font-weight:300;font-size:clamp(2rem,5vw,3.4rem);margin-bottom:18px}
+.pe-cta h2 em{font-style:italic;color:var(--clay)}
+.pe-cta .row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.pe-cta a{font-family:var(--mono);font-size:.78rem;letter-spacing:.05em;padding:13px 24px;border-radius:30px;border:1px solid var(--line);transition:.25s}
+.pe-cta a.solid{background:var(--ink);color:var(--canvas);border-color:var(--ink)}
+.pe-cta a.solid:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.pe-cta a.line:hover{border-color:var(--accent);color:var(--accent)}
+
+.pe-back{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;
+  padding:18px var(--pad);font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink);background:color-mix(in srgb,var(--canvas) 86%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.pe-back a{display:inline-flex;align-items:center;gap:8px;transition:color .25s}
+.pe-back a:hover{color:var(--accent)}
+.pe-back .theme-btn{text-transform:uppercase}
+@media(max-width:560px){.frame{height:230px}.frame iframe{transform:scale(.32)}}
+</style>
+</head>
+<body>
+<svg class="grain"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>
+
+<div class="pe-back">
+  <a href="index.html">← Shubham Khade</a>
+  <button class="theme-btn" id="theme" aria-label="Toggle dark mode">Dark</button>
+</div>
+
+<!-- HERO -->
+<header class="pe-wrap pe-hero">
+  <div class="pe-kick">GenAI · Prompt Engineering</div>
+  <h1>Prompt engineering,<br />as a <em>system.</em></h1>
+  <p class="pe-lead">Anyone can write one prompt. I build the <b>operating layer around the model</b> — operating manuals, a reusable design-DNA vocabulary, and structured agent harnesses that make an LLM produce <b>consistent, production-grade design &amp; code</b> on demand. The proof is <b>USYNC</b>: a hub indexing <b>150+ AI-generated design artifacts</b>, each with a live inline preview.</p>
+  <div class="pe-metrics">
+    <div class="m"><b>150+</b><span>Design artifacts indexed</span></div>
+    <div class="m"><b>200</b><span>Style-DNA vocabulary tokens</span></div>
+    <div class="m"><b>8</b><span>Channels · live inline previews</span></div>
+    <div class="m"><b>0</b><span>Clicks to preview a demo</span></div>
+  </div>
+</header>
+
+<!-- LIVE DEMOS -->
+<section class="pe-wrap pe-sec" id="demos">
+  <div class="pe-label">Live demos — not screenshots</div>
+  <h2 class="pe-h2">Built by <em>prompting</em>, shipped to the web</h2>
+  <p class="pe-sub">Both load live below — scroll and they render in place. Each is the output of a prompt system, not a one-off chat.</p>
+  <div class="demos">
+
+    <article class="demo">
+      <div class="frame" data-src="https://shubhamkhade1555-creator-usync.vercel.app/" onclick="window.open('https://shubhamkhade1555-creator-usync.vercel.app/','_blank')">
+        <span class="live"><i></i>LIVE</span>
+        <div class="ph"><span class="spin"></span>loading usync…</div>
+        <div class="ov">open full hub ↗</div>
+      </div>
+      <div class="demo-body">
+        <h3>USYNC — unified artifact hub</h3>
+        <p>A self-indexing gallery of every AI-generated design, demo and project — 150+ artifacts across 8 channels, each with a <b>live inline iframe preview</b> that mounts only when it scrolls into view (so 150 full sites stay smooth). Static, zero-deps, re-buildable from one script.</p>
+        <div class="demo-stk"><i>Prompt systems</i><i>Design DNA</i><i>Vanilla JS</i><i>IntersectionObserver</i><i>Vercel</i></div>
+        <div class="demo-foot">
+          <a class="primary" href="https://shubhamkhade1555-creator-usync.vercel.app/" target="_blank" rel="noopener">Open USYNC ↗</a>
+          <a class="ghost" href="#prompts">See the prompts ↓</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="demo">
+      <div class="frame" data-src="https://usync-audio-nu5r.vercel.app/" onclick="window.open('https://usync-audio-nu5r.vercel.app/','_blank')">
+        <span class="live"><i></i>LIVE</span>
+        <div class="ph"><span class="spin"></span>loading usync audio…</div>
+        <div class="ov">open app ↗</div>
+      </div>
+      <div class="demo-body">
+        <h3>USYNC Audio — AI-powered audio sync</h3>
+        <p>A focused companion to the hub — a browser-based tool for <b>AI-powered audio synchronization</b>, aligning and processing audio tracks entirely client-side. Same prompt-system workflow as USYNC: spec → generate → verify → ship. Open-source, deployed on Vercel.</p>
+        <div class="demo-stk"><i>Prompt systems</i><i>Web Audio</i><i>Vanilla JS</i><i>Vercel</i></div>
+        <div class="demo-foot">
+          <a class="primary" href="https://usync-audio-nu5r.vercel.app/" target="_blank" rel="noopener">Open app ↗</a>
+          <a class="ghost" href="https://github.com/shubhamkhade1555-creator/usync-audio" target="_blank" rel="noopener">Code →</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="pe-wrap pe-sec">
+  <div class="pe-label">How it works</div>
+  <h2 class="pe-h2">Four moves that turn a chat into a <em>factory</em></h2>
+  <p class="pe-sub">The difference between "asked an LLM for a website" and a repeatable system is structure. These are the layers I engineer.</p>
+  <div class="pillars">
+    <div class="pillar"><div class="pn">01 / Operating manual</div><h4>Persona &amp; rules</h4><p>A dense system prompt that fixes role, output density, hard bans and a verify-before-ship pipeline — so quality is the default, not luck.</p></div>
+    <div class="pillar"><div class="pn">02 / Design DNA</div><h4>Reusable vocabulary</h4><p>A 200-token style vocabulary (layout, motion, palette, typographic feel) the model composes from — making outputs varied yet on-brand.</p></div>
+    <div class="pillar"><div class="pn">03 / Structured output</div><h4>Schema &amp; manifest</h4><p>Artifacts emit to a fixed schema (JSON manifest) so a static site can index, filter and live-preview them with zero manual wiring.</p></div>
+    <div class="pillar"><div class="pn">04 / Agent harness</div><h4>Build &amp; verify loop</h4><p>Multi-step agents scaffold, run and self-check the result — catching format drift and broken previews before anything ships.</p></div>
+  </div>
+</section>
+
+<!-- PROMPTS -->
+<section class="pe-wrap pe-sec" id="prompts">
+  <div class="pe-label">The prompts</div>
+  <h2 class="pe-h2">Copy-paste the actual <em>system</em></h2>
+  <p class="pe-sub">Real, reusable prompts behind the work above — the operating layer, the design-DNA generator, and the inline-preview gallery spec. Hit copy and run them.</p>
+  <div class="prompts">
+
+    <div class="prompt">
+      <div class="prompt-top"><span class="tt"><em>01</em> · Operating manual (system prompt)</span><span style="display:flex;gap:10px;align-items:center"><span class="tech">Meta-prompt</span><button class="copy">copy</button></span></div>
+      <pre>You are a senior design+front-end engineer. Operate at MAX reasoning, MIN tokens.
+
+RULES
+- Lead with the artifact, not preamble. No "Great question", no recap.
+- One self-contained file unless told otherwise. No `...`, no stubs — full code.
+- Distinctive over generic: avoid default-AI gradients, centered-everything, lorem.
+- Numbers over adjectives. Tables over paragraphs for >=3 options.
+
+PIPELINE (every output): Understand -> Structure -> Build -> Self-verify.
+Before shipping, check: does it run, is it responsive, does the preview render?
+If you cannot defend a choice, change it. Ship the version you'd put your name on.</pre>
+    </div>
+
+    <div class="prompt">
+      <div class="prompt-top"><span class="tt"><em>02</em> · Design-DNA generator</span><span style="display:flex;gap:10px;align-items:center"><span class="tech">Few-shot · style transfer</span><button class="copy">copy</button></span></div>
+      <pre>Generate ONE landing page from this design DNA. Compose, don't copy.
+
+DNA:
+- layout      : {bento | editorial | terminal | swiss-grid}
+- motion      : {scroll-reveal, magnetic buttons, cursor spotlight}
+- palette     : warm-canvas #EFEBE2 / ink #13110D / accent #1B3FE0 / clay #D8623A
+- type        : Fraunces (display) + Space Grotesk (UI) + JetBrains Mono (meta)
+- feel        : "editorial, confident, expensive — not a template"
+
+OUTPUT: a single self-contained .html (inline CSS+JS). Mobile-first, a11y-clean,
+no external build. End with a one-line note: which DNA traits you leaned on.</pre>
+    </div>
+
+    <div class="prompt">
+      <div class="prompt-top"><span class="tt"><em>03</em> · Inline-preview gallery spec</span><span style="display:flex;gap:10px;align-items:center"><span class="tech">Structured output</span><button class="copy">copy</button></span></div>
+      <pre>Build a static gallery that indexes many HTML artifacts.
+
+REQUIREMENTS
+- Read artifacts from a JSON manifest: [{ id, title, category, type, path }].
+- Each card shows a LIVE inline iframe preview (scaled), never a click-to-open modal.
+- Mount the iframe only when the card nears the viewport via IntersectionObserver,
+  and UNMOUNT it when it scrolls away — keep only ~10-20 heavy iframes alive at once.
+- Filter chips by category + a "/" search box. Zero dependencies, single index.html.
+- A separate node script scans the repo and writes manifest.json (re-runnable).
+
+Deliver: index.html + build-manifest.js, both complete.</pre>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="pe-wrap pe-cta">
+  <h2>Bring a problem that <em>doesn't fit</em> in one prompt.</h2>
+  <div class="row">
+    <a class="solid" href="https://shubhamkhade1555-creator-usync.vercel.app/" target="_blank" rel="noopener">Explore USYNC ↗</a>
+    <a class="line" href="index.html#work">See other work →</a>
+    <a class="line" href="mailto:shubhamkhade1555@gmail.com">Email me →</a>
+  </div>
+</section>
+
+<footer>
+  <div>© 2026 Shubham Anil Khade</div>
+  <div>Prompt Engineering · USYNC</div>
+  <div>Fraunces · Space Grotesk · JetBrains Mono</div>
+</footer>
+
+<script>
+// theme toggle (persisted, shared key with main site)
+(function(){
+  const btn=document.getElementById('theme');
+  const saved=localStorage.getItem('theme');
+  if(saved==='dark'){document.documentElement.setAttribute('data-theme','dark');btn.textContent='Light';}
+  btn.addEventListener('click',()=>{
+    const dark=document.documentElement.getAttribute('data-theme')==='dark';
+    if(dark){document.documentElement.removeAttribute('data-theme');btn.textContent='Dark';localStorage.setItem('theme','light');}
+    else{document.documentElement.setAttribute('data-theme','dark');btn.textContent='Light';localStorage.setItem('theme','dark');}
+  });
+})();
+
+// lazy-mount live iframes only near viewport
+(function(){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{
+    if(!e.isIntersecting)return;const fr=e.target;if(fr.dataset.l)return;fr.dataset.l=1;
+    const f=document.createElement('iframe');
+    f.loading='lazy';f.setAttribute('tabindex','-1');f.setAttribute('aria-hidden','true');
+    f.referrerPolicy='no-referrer';
+    f.addEventListener('load',()=>fr.classList.add('loaded'));
+    f.src=fr.dataset.src;fr.appendChild(f);io.unobserve(fr);
+  }),{rootMargin:'350px'});
+  document.querySelectorAll('.frame').forEach(f=>io.observe(f));
+})();
+
+// copy buttons
+document.querySelectorAll('.copy').forEach(b=>{
+  b.addEventListener('click',()=>{
+    const pre=b.closest('.prompt').querySelector('pre');
+    navigator.clipboard.writeText(pre.innerText).then(()=>{
+      b.textContent='copied ✓';b.classList.add('done');
+      setTimeout(()=>{b.textContent='copy';b.classList.remove('done');},1600);
+    });
+  });
+});
+</script>
+</body>
+</html>
