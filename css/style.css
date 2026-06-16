@@ -14,7 +14,7 @@ body{background:transparent;color:var(--ink);font-family:var(--grotesk);font-siz
   -webkit-font-smoothing:antialiased;transition:background .6s var(--ease),color .6s var(--ease)}
 ::selection{background:var(--accent);color:#fff}
 a{color:inherit;text-decoration:none}
-.grain{position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.04;mix-blend-mode:multiply}
+.grain{position:fixed;inset:0;width:100%;height:100%;z-index:9999;pointer-events:none;opacity:.04;mix-blend-mode:multiply}
 [data-theme="dark"] .grain{mix-blend-mode:screen;opacity:.06}
 
 /* PRELOADER */
@@ -214,6 +214,15 @@ h2.big-h em{font-style:italic;color:var(--clay)}
 .wcard{display:flex;flex-direction:column}
 .wvis{aspect-ratio:4/3;border-radius:10px;overflow:hidden;border:1px solid var(--line);position:relative;background:var(--band)}
 .wvis canvas{width:100%;height:100%;display:block}
+/* live iframe preview — scaled in JS via .wframe transform */
+.wvis-live .wframe{position:absolute;top:0;left:0;width:1200px;height:900px;border:0;transform-origin:0 0;pointer-events:none;background:#fff}
+.wcard:hover .wvis-live .wframe{pointer-events:auto}
+.wvis-live::after{content:"LIVE";position:absolute;top:14px;right:14px;z-index:2;font-family:var(--mono);font-size:.56rem;letter-spacing:.12em;color:#fff;background:var(--clay);padding:3px 7px;border-radius:4px}
+/* image preview + placeholder fallback */
+.wvis .wshot{width:100%;height:100%;object-fit:cover;display:block}
+.wvis-ph .wshot{display:none}
+.wvis-ph::after{content:"⬚  "attr(data-ph);position:absolute;inset:0;display:grid;place-items:center;padding:0 22px;text-align:center;
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.04em;color:var(--ink-soft)}
 .wvis .wnum{position:absolute;top:16px;left:18px;font-family:var(--mono);font-size:.72rem;color:var(--band-fg);z-index:2;mix-blend-mode:difference}
 .wmeta{padding-top:24px}
 .wmeta .wtop{display:flex;gap:16px;font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-soft);margin-bottom:16px;flex-wrap:wrap}
